@@ -44,7 +44,7 @@ function normalizeBottle(img){
  if(!img||!img.complete||!img.naturalWidth||img.dataset.normalized)return;
  img.dataset.normalized='pending';
  try{
-  const key=img.currentSrc||img.src;
+  const key=(img.currentSrc||img.src)+'|'+(img.dataset.packageSize||'bottle');
   if(normalizedImageCache.has(key)){const cached=normalizedImageCache.get(key);if(cached){img.src=cached;img.dataset.normalized='yes'}return}
   const w=Math.max(1,Math.round(img.naturalWidth*Math.min(1,600/img.naturalWidth,600/img.naturalHeight)));
   const h=Math.max(1,Math.round(img.naturalHeight*w/img.naturalWidth));
@@ -53,14 +53,14 @@ function normalizeBottle(img){
   const pixels=ctx.getImageData(0,0,w,h),d=pixels.data;
   const corners=[[0,0],[w-1,0],[0,h-1],[w-1,h-1]].map(([x,y])=>{const k=(y*w+x)*4;return[d[k],d[k+1],d[k+2]]});
   const bg=[0,1,2].map(c=>corners.map(v=>v[c]).sort((a,b)=>a-b)[2]);
-  const isLight=bg.every(v=>v>225);
+  const isLight=bg.every(v=>v>215);
   let minX=w,minY=h,maxX=-1,maxY=-1;
   const stride=Math.max(1,Math.floor(Math.min(w,h)/250));
   for(let y=0;y<h;y+=stride)for(let x=0;x<w;x+=stride){
    const i=(y*w+x)*4,a=d[i+3];if(a<35)continue;
    const diff=Math.max(Math.abs(d[i]-bg[0]),Math.abs(d[i+1]-bg[1]),Math.abs(d[i+2]-bg[2]));
-   const nearWhite=d[i]>242&&d[i+1]>242&&d[i+2]>242;
-   if(a>220&&((isLight&&nearWhite)||(!isLight&&diff<35)))continue;
+   const nearWhite=d[i]>235&&d[i+1]>235&&d[i+2]>235;
+   if(a>220&&((isLight&&nearWhite)||(!isLight&&diff<42)))continue;
    minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y);
   }
   if(maxX<minX||maxY<minY){img.dataset.normalized='skipped';return}
@@ -73,8 +73,8 @@ function normalizeBottle(img){
   const cw=maxX-minX+1,ch=maxY-minY+1;
   const output=document.createElement('canvas');output.width=360;output.height=460;
   const o=output.getContext('2d');const size=img.dataset.packageSize||'bottle';
-  const targetHeight=size==='can250'?285:size==='can200'?245:410;
-  const targetWidth=size==='can250'?220:size==='can200'?200:285;
+  const targetHeight=size==='can250'?330:size==='can200'?275:410;
+  const targetWidth=size==='can250'?300:size==='can200'?280:340;
   const scale=Math.min(targetWidth/cw,targetHeight/ch);
   const dw=cw*scale,dh=ch*scale;
   // White canvas background matches the product card and removes source margins.
