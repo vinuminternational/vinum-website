@@ -11,8 +11,7 @@
 .info{position:relative;z-index:1;background:#fff;min-width:0;overflow-wrap:anywhere}
 @media(max-width:700px){.photo{height:225px;min-height:225px;max-height:225px;padding:16px 10px 12px}}
 @media(max-width:360px){.photo{height:280px;min-height:280px;max-height:280px}}
-/* Rockburn Pinot Noir and Old Sailor Coffee: reduce displayed bottle size only, without affecting copy. */
-.item.scaled-special .photo img{max-height:76%;max-width:76%;object-fit:contain}
+.photo{padding:12px;isolation:isolate}.photo img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}.photo canvas.normalized-bottle{display:block;width:100%;height:100%;object-fit:contain;max-width:100%;max-height:100%}
 </style></head><body>
 <header><div class="wrap nav"><a class="brand" href="ichon-wine-shop.html">이촌동와인가게<small>ICHON WINE SHOP</small></a><nav class="navlinks"><a href="#collection">와인 컬렉션</a><a href="#guide">주문 안내</a></nav></div></header>
 <section class="hero"><div class="wrap heroInner"><div><div class="eyebrow">CURATED WINES FOR YOUR TABLE</div><h1>좋은 와인을,<br>더 가까운 일상에.</h1><p>이촌동의 작은 와인가게가 엄선한 와인들.<br>오늘의 식탁에 어울리는 한 병을 찾아보세요.</p></div><div class="heroPhoto" aria-hidden="true"></div></div></section>
@@ -37,11 +36,64 @@ function tasteOf(p){const sections=p.sections||[];const note=sections.find(x=>/�
 function volumeOf(p){const txt=[p.name,p.desc,p.image].join(' ').toLowerCase();const found=txt.match(/(200|250|375|500|750|1000)\\s?ml/);if(found)return found[1]+'ml';if(/\\b1l\\b/.test(txt))return '1,000ml';if(/can|캔|ciao/.test(txt))return '용량 확인 중';return '750ml (확인 필요)'}
 const state={products:[],category:'all'};
 const safe=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* Normalize the visible bottle, not the surrounding image whitespace.
+   Work on a reduced offscreen canvas; keep original images as a fallback. */
+const normalizedImageCache=new Map();
+function normalizeBottle(img){
+ if(!img||!img.complete||!img.naturalWidth||img.dataset.normalized)return;
+ img.dataset.normalized='pending';
+ try{
+  const key=img.currentSrc||img.src;
+  if(normalizedImageCache.has(key)){const cached=normalizedImageCache.get(key);if(cached){img.src=cached;img.dataset.normalized='yes'}return}
+  const w=Math.max(1,Math.round(img.naturalWidth*Math.min(1,600/img.naturalWidth,600/img.naturalHeight)));
+  const h=Math.max(1,Math.round(img.naturalHeight*w/img.naturalWidth));
+  const source=document.createElement('canvas');source.width=w;source.height=h;
+  const ctx=source.getContext('2d',{willReadFrequently:true});ctx.drawImage(img,0,0,w,h);
+  const pixels=ctx.getImageData(0,0,w,h),d=pixels.data;
+  const corners=[[0,0],[w-1,0],[0,h-1],[w-1,h-1]].map(([x,y])=>{const k=(y*w+x)*4;return[d[k],d[k+1],d[k+2]]});
+  const bg=[0,1,2].map(c=>corners.map(v=>v[c]).sort((a,b)=>a-b)[2]);
+  const isLight=bg.every(v=>v>225);
+  let minX=w,minY=h,maxX=-1,maxY=-1;
+  const stride=Math.max(1,Math.floor(Math.min(w,h)/250));
+  for(let y=0;y<h;y+=stride)for(let x=0;x<w;x+=stride){
+   const i=(y*w+x)*4,a=d[i+3];if(a<35)continue;
+   const diff=Math.max(Math.abs(d[i]-bg[0]),Math.abs(d[i+1]-bg[1]),Math.abs(d[i+2]-bg[2]));
+   const nearWhite=d[i]>242&&d[i+1]>242&&d[i+2]>242;
+   if(a>220&&((isLight&&nearWhite)||(!isLight&&diff<35)))continue;
+   minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y);
+  }
+  if(maxX<minX||maxY<minY){img.dataset.normalized='skipped';return}
+  const bw=maxX-minX+1,bh=maxY-minY+1;
+  // Refuse suspiciously small/noisy foreground crops.
+  if(bw<Math.max(8,w*.04)||bh<Math.max(12,h*.12)){img.dataset.normalized='skipped';return}
+  const pad=Math.ceil(Math.max(bw,bh)*.025);
+  minX=Math.max(0,minX-pad);minY=Math.max(0,minY-pad);
+  maxX=Math.min(w-1,maxX+pad);maxY=Math.min(h-1,maxY+pad);
+  const cw=maxX-minX+1,ch=maxY-minY+1;
+  const output=document.createElement('canvas');output.width=360;output.height=460;
+  const o=output.getContext('2d');const scale=Math.min(285/cw,410/ch);
+  const dw=cw*scale,dh=ch*scale;
+  // White canvas background matches the product card and removes source margins.
+  o.fillStyle='#ffffff';o.fillRect(0,0,360,460);
+  o.drawImage(source,minX,minY,cw,ch,(360-dw)/2,(460-dh)/2,dw,dh);
+  const result=output.toDataURL('image/png');
+  normalizedImageCache.set(key,result);img.src=result;img.dataset.normalized='yes';
+ }catch(e){img.dataset.normalized='skipped';}
+}
+function normalizeVisibleBottles(){
+ document.querySelectorAll('#grid .photo img').forEach(img=>{
+  if(img.complete)normalizeBottle(img);
+  else img.addEventListener('load',()=>normalizeBottle(img),{once:true});
+ });
+}
+
 function render(){
  const q=document.getElementById('search').value.trim().toLowerCase(),country=document.getElementById('country').value;
  const filtered=state.products.filter(p=>(state.category==='all'||(p.category||'other')===state.category)&&(!country||countryOf(p)===country)&&(!q||[p.name,p.grape,p.region,p.brand].join(' ').toLowerCase().includes(q)));
  document.getElementById('count').textContent=filtered.length+'종';
  document.getElementById('grid').innerHTML=filtered.length?filtered.map(p=>{const i=state.products.indexOf(p);return '<article class="item'+(/락번\s*피노\s*누아|rockburn\s*pinot\s*noir|올드\s*세일러|old\s*sailor/i.test(p.name)?' scaled-special':'')+'"><div class="photo"><img loading="lazy" src="'+encodeURI(p.image).replace(/'/g,'%27')+'" alt="'+safe(p.name)+'"></div><div class="info"><span class="tag">'+safe(categories[p.category]||'와인')+' · '+safe(countryOf(p))+'</span><h3>'+safe(p.name)+'</h3><div class="meta">품종 '+safe(p.grape||'확인 중')+'<br>용량 '+safe(volumeOf(p))+' · 도수 '+safe(p.abv||'확인 중')+'</div><p class="tasting">'+safe(tasteOf(p))+'</p><div class="price">가격 준비 중</div><button class="action" data-id="'+i+'">제품 자세히 보기</button></div></article>'}).join(''):'<div class="empty">조건에 맞는 상품이 없습니다.</div>';
+ normalizeVisibleBottles();
 }
 async function init(){
  try{const response=await fetch('index.html',{cache:'no-store'});if(!response.ok)throw Error('카탈로그 접근 실패');const source=await response.text();state.products=extractObjects(source).filter(p=>!/챠오 로쏘|ciao rosso/i.test(p.name));if(!state.products.length)throw Error('상품을 찾지 못했습니다.');
