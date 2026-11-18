@@ -50,6 +50,10 @@ function priceOf(p){
  const name=String(p.name||'').toLowerCase().replace(/\s+/g,'');
  const brand=String(p.brand||'').toLowerCase().replace(/\s+/g,'');
  const identity=name+' '+brand;
+ if(/브루넬로디몬탈치노|brunellodimontalcino/.test(identity))return '69,300원';
+ if(/프리미티보수수마니엘로|primitivosusumaniello|수수마니엘로|susumaniello|아파시멘토|아파씨멘토|appassimento/.test(identity))return '33,000원';
+ if(/트렌텀|트렌담|trentham/.test(identity))return '28,000원';
+ if(/일피아토|ilpiatto|ilpiato/.test(identity))return '19,900원';
  if(/빌라프란체스카|villafrancesca/.test(identity))return '4,500원';
  if(!/챠오|차오|ciao/.test(identity))return '가격 준비 중';
  if(/피노그리지오|pinotgrigio/.test(name))return '4,500원';
