@@ -46,6 +46,7 @@ function priceOf(p){
  const name=String(p.name||'').toLowerCase().replace(/\s+/g,'');
  const brand=String(p.brand||'').toLowerCase().replace(/\s+/g,'');
  const identity=name+' '+brand;
+ if(/섹슈얼초콜릿|sexualchocolate/.test(identity))return '55,000원';
  if(/돔페리뇽|domp[eé]rignon/.test(identity))return '349,000원';
  if(/크룩|krug/.test(identity))return '399,000원';
  if(/에디찌오네|에디치오네|edizione/.test(identity))return '72,000원';
