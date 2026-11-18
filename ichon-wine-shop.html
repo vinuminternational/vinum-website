@@ -14,11 +14,12 @@
 .photo{padding:12px;isolation:isolate}.photo img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}.photo canvas.normalized-bottle{display:block;width:100%;height:100%;object-fit:contain;max-width:100%;max-height:100%}
 
 /* Wine ladder recommendation */
-.quiz{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,4vw,42px);margin-bottom:52px;box-shadow:0 12px 36px #28332e0a}.quizTop{display:flex;justify-content:space-between;gap:15px;align-items:center}.quizLabel{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}.quiz h2{font-size:clamp(24px,3vw,35px);letter-spacing:-.06em;margin:10px 0}.quiz .lead{color:var(--muted);font-size:13px;line-height:1.9}.quizProgress{display:flex;gap:7px;margin:24px 0}.quizProgress span{height:5px;background:#eee9df;flex:1;border-radius:20px}.quizProgress span.on{background:var(--accent)}.quizChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:20px 0}.quizChoices button{border:1px solid #dcd5c9;background:#fcfaf7;color:var(--ink);padding:17px 12px;border-radius:9px;min-height:60px;font-size:14px}.quizChoices button:hover,.quizChoices button:focus-visible{border-color:var(--accent);background:#f8eef0}.quizBack,.quizAgain{border:0;background:none;color:var(--accent);padding:10px 0;text-decoration:underline;font-size:13px}.quizLadder{max-width:440px;margin:12px auto}.quizLadder svg{width:100%;height:auto}.quizResult{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:center;background:#faf8f3;border:1px solid var(--line);border-radius:12px;padding:22px;margin:20px 0}.quizResult img{width:100%;height:180px;object-fit:contain}.quizResult h3{font-size:21px;margin:6px 0}.quizResult .price{font-size:20px}.quizButtons{display:flex;gap:10px;flex-wrap:wrap}.quizButtons button{border-radius:6px;padding:12px 17px;border:1px solid var(--accent);background:var(--accent);color:white}.quizButtons button.secondary{background:white;color:var(--accent)}.quizEmpty{color:var(--muted);line-height:1.8;font-size:13px}@media(max-width:600px){.quizChoices{gap:8px}.quizChoices button{padding:12px 8px;font-size:12px}.quizResult{grid-template-columns:90px 1fr;gap:13px;padding:12px}.quizResult img{height:140px}.quizResult h3{font-size:17px}}
+.quiz{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,4vw,42px);margin-bottom:52px;box-shadow:0 12px 36px #28332e0a}.quizTop{display:flex;justify-content:space-between;gap:15px;align-items:center}.quizLabel{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}.quiz h2{font-size:clamp(24px,3vw,35px);letter-spacing:-.06em;margin:10px 0}.quiz .lead{color:var(--muted);font-size:13px;line-height:1.9}.quizProgress{display:flex;gap:7px;margin:24px 0}.quizProgress span{height:5px;background:#eee9df;flex:1;border-radius:20px}.quizProgress span.on{background:var(--accent)}.quizChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:20px 0}.quizChoices button{border:1px solid #dcd5c9;background:#fcfaf7;color:var(--ink);padding:17px 12px;border-radius:9px;min-height:60px;font-size:14px}.quizChoices button[aria-pressed="true"],.quizChoices button:hover,.quizChoices button:focus-visible{border-color:var(--accent);background:#f8eef0}.quizBack,.quizAgain{border:0;background:none;color:var(--accent);padding:10px 0;text-decoration:underline;font-size:13px}.quizLadder{max-width:440px;margin:12px auto}.quizLadder svg{width:100%;height:auto}.quizResult{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:center;background:#faf8f3;border:1px solid var(--line);border-radius:12px;padding:22px;margin:20px 0}.quizResult img{width:100%;height:180px;object-fit:contain}.quizResult h3{font-size:21px;margin:6px 0}.quizResult .price{font-size:20px}.quizButtons{display:flex;gap:10px;flex-wrap:wrap}.quizButtons button{border-radius:6px;padding:12px 17px;border:1px solid var(--accent);background:var(--accent);color:white}.quizButtons button.secondary{background:white;color:var(--accent)}.quizEmpty{color:var(--muted);line-height:1.8;font-size:13px}@media(max-width:600px){.quizChoices{gap:8px}.quizChoices button{padding:12px 8px;font-size:12px}.quizResult{grid-template-columns:90px 1fr;gap:13px;padding:12px}.quizResult img{height:140px}.quizResult h3{font-size:17px}}
+.quiz{scroll-margin-top:90px}.quizPhotoPending{font-size:12px;color:var(--muted);text-align:center}.quizResult>div{min-width:0;overflow-wrap:anywhere}
 </style></head><body>
 <header><div class="wrap nav"><a class="brand" href="ichon-wine-shop.html">이촌동와인가게<small>ICHON WINE SHOP</small></a><nav class="navlinks"><a href="#wine-quiz">30초 와인 사다리</a><a href="#collection">와인 컬렉션</a><a href="#guide">주문 안내</a></nav></div></header>
 <section class="hero"><div class="wrap heroInner"><div><div class="eyebrow">CURATED WINES FOR YOUR TABLE</div><h1>좋은 와인을,<br>더 가까운 일상에.</h1><p>이촌동의 작은 와인가게가 엄선한 와인들.<br>오늘의 식탁에 어울리는 한 병을 찾아보세요.</p></div><div class="heroPhoto" aria-hidden="true"></div></div></section>
-<main class="wrap section" id="collection"><section class="quiz" id="wine-quiz" aria-labelledby="quizHeading"><div class="quizTop"><div><div class="quizLabel">ICHON WINE LADDER · 30 SECOND QUIZ</div><h2 id="quizHeading">오늘 나에게 어울리는 와인은?</h2><div class="lead">취향과 예산을 선택하면, 조건에 맞는 와인 중 사다리로 한 병을 추천해 드려요.</div></div><span aria-hidden="true" style="font-size:36px">🍷</span></div><div class="quizProgress" id="quizProgress" aria-label="진행 단계"></div><div id="quizBody" aria-live="polite"></div></section>
+<main class="wrap section" id="collection"><section class="quiz" id="wine-quiz" aria-labelledby="quizHeading"><div class="quizTop"><div><div class="quizLabel">ICHON WINE LADDER · 30 SECOND QUIZ</div><h2 id="quizHeading">오늘 나에게 어울리는 와인은?</h2><div class="lead">상황, 가격대, 와인 종류를 고르면 사다리로 오늘의 와인 한 병을 추천해 드려요.</div></div><span aria-hidden="true" style="font-size:36px">🍷</span></div><div class="quizProgress" id="quizProgress" aria-hidden="true"></div><div id="quizBody" aria-live="polite"><p class="quizEmpty">상품 정보를 불러오는 중입니다.</p></div></section>
 <div class="head"><div><h2>Wine Collection</h2><div class="sub">이촌동와인가게가 엄선한 와인을 소개합니다. 상품별 가격은 추후 공개됩니다.</div></div><div class="sub" id="count"></div></div>
 <div class="toolbar"><input id="search" placeholder="와인명 · 품종 · 국가 검색" aria-label="와인 검색"><select id="country" aria-label="국가 선택"><option value="">전체 국가</option></select></div>
 <div class="chips" id="chips"></div><div class="grid" id="grid"><div class="empty">상품 정보를 불러오는 중입니다.</div></div>
@@ -143,40 +144,122 @@ async function init(){
 }
 document.getElementById('search').addEventListener('input',render);document.getElementById('country').addEventListener('change',render);
 document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;state.category=b.dataset.category;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()});
-document.getElementById('grid').addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(!b)return;const p=state.products[Number(b.dataset.id)];document.getElementById('detailTitle').textContent=p.name;document.getElementById('detailText').textContent=[countryOf(p),'품종: '+(p.grape||'확인 중'),'용량: '+volumeOf(p),'도수: '+(p.abv||'확인 중'),'맛: '+tasteOf(p)].join(' · ');document.getElementById('detail').showModal()});
+function showProductDetail(p){
+ document.getElementById('detailTitle').textContent=p.name;document.getElementById('detailText').textContent=[countryOf(p),'품종: '+(p.grape||'확인 중'),'용량: '+volumeOf(p),'도수: '+(p.abv||'확인 중'),'맛: '+tasteOf(p)].join(' · ');document.getElementById('detail').showModal()
+}
+document.getElementById('grid').addEventListener('click',e=>{
+ const button=e.target.closest('[data-id]');
+ if(button)showProductDetail(state.products[Number(button.dataset.id)]);
+});
 
 const quizQuestions=[
- {title:'어떤 와인을 찾으세요?',choices:['레드','화이트','스파클링','상관없어요']},
- {title:'어떤 맛을 선호하세요?',choices:['달콤한 맛','산뜻하고 가벼운 맛','드라이하고 진한 맛','상관없어요']},
- {title:'어떤 상황에서 마시나요?',choices:['혼술·가벼운 한 잔','식사와 함께','선물용','파티·모임']},
- {title:'예산은 어느 정도인가요?',choices:['2만원 미만','2~4만원','4~7만원','7만원 이상']}
+ {key:'occasion',title:'어떤 자리에서 즐길 와인인가요?',choices:[
+  ['gift','선물할 때'],['food','음식과 함께'],['celebration','기념일·축하'],
+  ['home','집에서 가볍게'],['friends','친구들과 모일 때'],['beginner','와인을 처음 고를 때']
+ ]},
+ {key:'budget',title:'어느 가격대를 찾으세요?',choices:[
+  [0,'2만원 미만'],[20000,'2만원 이상~4만원 미만'],[40000,'4만원 이상~7만원 미만'],[70000,'7만원 이상']
+ ]},
+ {key:'style',title:'어떤 와인이 끌리세요?',choices:[
+  ['white','화이트'],['red','레드'],['sparkling','스파클링']
+ ]}
 ];
-const quizAnswers=[];let quizStep=0,quizCandidates=[],quizWinner=null,quizTimer=null;
-function quizPrice(p){if(Number.isFinite(p.retailPrice))return p.retailPrice;const m=String(priceOf(p)).match(/(?:특가\s*)?([\d,]+)원(?![\s\S]*원)/);return m?Number(m[1].replace(/,/g,'')):null}
-function quizMatches(p){
- const category=quizAnswers[0],taste=quizAnswers[1],budget=quizAnswers[3],price=quizPrice(p);
- if(price===null||!p.image||p.image.includes('product-image-pending'))return false;
- if(category==='레드'&&p.category!=='red'||category==='화이트'&&p.category!=='white'||category==='스파클링'&&p.category!=='sparkling')return false;
- if(budget==='2만원 미만'&&price>=20000||budget==='2~4만원'&&(price<20000||price>=40000)||budget==='4~7만원'&&(price<40000||price>=70000)||budget==='7만원 이상'&&price<70000)return false;
- const words=[p.name,p.grape,p.desc,tasteOf(p)].join(' ').toLowerCase();
- if(taste==='달콤한 맛'&&!/모스카토|moscato|스위트|sweet|달콤|벨리니|bellini|샹그리아|sangria|모히또|mojito|람브루스코|lambrusco/.test(words))return false;
- if(taste==='산뜻하고 가벼운 맛'&&!/피노|pinot|소비뇽|sauvignon|리슬링|riesling|로제|rosé|rose|세코|secco|샤르도네|chardonnay|상큼|산뜻|가벼|스파클링|sparkling/.test(words))return false;
- if(taste==='드라이하고 진한 맛'&&!/쉬라|shiraz|syrah|까베르네|cabernet|프리미티보|primitivo|아파시멘토|appassimento|브루넬로|brunello|드라이|dry|말벡|malbec|네그로아마로|negroamaro/.test(words))return false;
- return true;
+const quizAnswers={};
+const quizBody=document.getElementById('quizBody');
+const quizProgress=document.getElementById('quizProgress');
+let quizStep=0;
+let quizWinner=null;
+let quizTimer=null;
+
+function quizPrice(p){
+ if(Number.isFinite(p.retailPrice))return p.retailPrice;
+ const prices=[...priceOf(p).matchAll(/([\d,]+)원/g)];
+ return prices.length?Number(prices.at(-1)[1].replace(/,/g,'')):null;
 }
-function quizRender(){
- const progress=document.getElementById('quizProgress'),body=document.getElementById('quizBody');
- progress.innerHTML=[0,1,2,3].map(i=>'<span class="'+(i<=quizStep?'on':'')+'"></span>').join('');
- if(quizStep<4){
- const q=quizQuestions[quizStep];body.innerHTML='<div class="quizLabel">STEP '+(quizStep+1)+' / 4</div><h3>'+safe(q.title)+'</h3><div class="quizChoices">'+q.choices.map((x,i)=>'<button type="button" data-quiz-choice="'+i+'">'+safe(x)+'</button>').join('')+'</div>'+(quizStep?'<button class="quizBack" type="button" data-quiz-back>← 이전 질문</button>':'');
- return;
+
+function quizStyle(p){
+ if(p.category!=='can')return p.category;
+ if(/피노\s*그리지오/.test(p.name))return 'white';
+ if(/빌라\s*프란체스카/.test(p.name))return 'red';
+ if(/모스카토|세코\s*비앙코|로제/.test(p.name))return 'sparkling';
+ return null;
+}
+
+function quizMatches(p){
+ const price=quizPrice(p);
+ const budget=quizAnswers.budget;
+ const bands=quizQuestions[1].choices;
+ const nextBand=bands[bands.findIndex(([value])=>value===budget)+1];
+ return !p.hidden&&!p.soldOut&&p.inStock!==false&&price!==null&&price>=budget
+  &&(!nextBand||price<nextBand[0])&&quizStyle(p)===quizAnswers.style;
+}
+
+function quizFit(p){
+ const words=[p.name,p.desc,tasteOf(p)].join(' ');
+ const can=p.category==='can';
+ const sparkling=quizStyle(p)==='sparkling';
+ const special=/샴페인|champagne|브루넬로|brunello|그랑 크뤼|grand cru/i.test([p.region,words].join(' '));
+ const easy=/부드러|부드럽|산뜻|상큼|가벼|가볍|달콤|과실향|과일향/.test(words);
+ switch(quizAnswers.occasion){
+  case 'gift': return special?3:can?0:2;
+  case 'food': return /페어링|음식|요리|곁들이|스테이크|피자|해산물|샐러드|치즈/.test(words)?3:can?0:1;
+  case 'celebration': return special?3:sparkling&&!can?2:can?0:1;
+  case 'home': return can?3:easy?2:1;
+  case 'friends': return sparkling&&!can?3:!can||easy?2:1;
+  case 'beginner': return easy?3:1;
  }
- quizCandidates=state.products.filter(quizMatches);
- if(!quizCandidates.length){body.innerHTML='<h3>조건에 맞는 와인이 아직 없어요.</h3><p class="quizEmpty">현재 홈페이지에 가격과 제품 사진이 등록된 와인 중에서 조건에 맞는 제품을 찾지 못했습니다. 예산이나 맛을 바꿔 다시 찾아보세요.</p><button class="quizBack" data-quiz-reset>처음부터 다시 찾기</button>';return}
- // Use up to four eligible wines; shuffle to keep each ladder fresh.
- quizCandidates=quizCandidates.sort(()=>Math.random()-.5).slice(0,4);
+}
+
+function quizReason(p){
+ const details=String(p.desc||tasteOf(p)).split('\n').map(line=>line.trim()).filter(Boolean);
+ const firstLine=details[0]||'';
+ const note=firstLine.length>100?firstLine.slice(0,97).trimEnd()+'…':firstLine;
+ const intros={
+  gift:'선물로 고른 '+categories[quizStyle(p)]+' 와인이에요.',
+  food:'식탁에 곁들이기 좋은 '+categories[quizStyle(p)]+' 와인이에요.',
+  celebration:quizStyle(p)==='sparkling'?'축하 건배에 어울리는 스파클링이에요.':'기념일 식탁에 추천하는 한 병이에요.',
+  home:p.category==='can'?'한두 잔 가볍게 즐기기 좋은 '+volumeOf(p)+' 캔이에요.':'집에서 한 잔 즐길 때 추천해요.',
+  friends:'친구들과 함께 즐기기 좋은 '+categories[quizStyle(p)]+' 와인이에요.',
+  beginner:'처음 고르신다면 이 와인의 맛을 참고해 보세요.'
+ };
+ return [intros[quizAnswers.occasion],note].filter(Boolean).join(' ');
+}
+
+function quizRender(focus=false,previous=null){
+ clearTimeout(quizTimer);
+ quizWinner=null;
+ const length=quizQuestions.length;
+ quizProgress.innerHTML=quizQuestions.map((_,i)=>'<span class="'+(i<=quizStep?'on':'')+'"></span>').join('');
+ if(quizStep<length){
+  const q=quizQuestions[quizStep];
+  const options=q.choices.map(([value,label],i)=>{
+   const selected=quizAnswers[q.key]===value;
+   return '<button type="button" aria-pressed="'+selected+'" data-quiz-choice="'+i+'">'+safe(label)+'</button>';
+  }).join('');
+  quizBody.innerHTML='<div class="quizLabel">'+(quizStep+1)+' / '+length+'</div><h3 tabindex="-1">'+safe(q.title)+'</h3>'
+   +'<div class="quizChoices">'+options+'</div>'
+   +(quizStep?'<button class="quizBack" type="button" data-quiz-step="'+(quizStep-1)+'">← 이전 질문</button>':'');
+  if(focus)quizBody.querySelector('h3').focus();
+  return;
+ }
+
+ const matches=state.products.filter(quizMatches);
+ if(!matches.length){
+  quizBody.innerHTML='<h3 tabindex="-1">조건에 맞는 와인이 아직 없어요.</h3>'
+   +'<p class="quizEmpty">가격대나 와인 종류를 바꿔 다시 찾아보세요.</p>'
+   +'<div class="quizButtons"><button type="button" data-quiz-step="1">가격대 바꾸기</button>'
+   +'<button class="secondary" type="button" data-quiz-step="2">와인 종류 바꾸기</button></div>';
+  quizBody.querySelector('h3').focus();
+  return;
+ }
+ const pool=matches.length>1?matches.filter(p=>p!==previous):matches;
+ const ranked=pool.map(p=>({p,score:quizFit(p),tie:Math.random()}))
+  .sort((a,b)=>b.score-a.score||a.tie-b.tie);
+ const bestScore=ranked[0].score;
+ const quizCandidates=ranked.filter(entry=>entry.score===bestScore).slice(0,4).map(entry=>entry.p);
+ const body=quizBody;
  const n=quizCandidates.length;
- const x=i=>55+i*(300/Math.max(1,n-1));
+ const x=i=>n===1?205:55+i*(300/(n-1));
  let bars='';const rungs=[];
  for(let i=0;i<Math.max(5,n*3);i++){if(n<2)break;const a=Math.floor(Math.random()*(n-1)),y=50+i*22;rungs.push([a,y]);bars+='<line x1="'+x(a)+'" y1="'+y+'" x2="'+x(a+1)+'" y2="'+y+'" stroke="#a77c5a" stroke-width="5" stroke-linecap="round"/>'}
  let lane=Math.floor(Math.random()*n),path='M '+x(lane)+' 24';
@@ -184,19 +267,67 @@ function quizRender(){
  path+=' L '+x(lane)+' 340';
  quizWinner=quizCandidates[lane];
  const lines=Array.from({length:n},(_,i)=>'<line x1="'+x(i)+'" y1="24" x2="'+x(i)+'" y2="340" stroke="#c8c0b5" stroke-width="3"/><text x="'+x(i)+'" y="18" text-anchor="middle" font-size="18">🍷</text>').join('');
- body.innerHTML='<h3>나만의 와인 사다리</h3><p class="lead">취향에 맞는 '+n+'종 중 오늘의 한 병을 뽑습니다.</p><div class="quizLadder"><svg viewBox="0 0 410 355" role="img" aria-label="와인 추천 사다리">'+lines+bars+'<path id="quizPath" d="'+path+'" fill="none" stroke="#6b343c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg></div><div id="quizReveal" aria-live="polite"><p class="quizEmpty">사다리를 따라 오늘의 와인을 찾는 중입니다…</p></div>';
- const line=document.getElementById('quizPath');line.style.transition='stroke-dashoffset 2.2s ease-in-out';requestAnimationFrame(()=>{line.style.strokeDashoffset='0'});
- clearTimeout(quizTimer);quizTimer=setTimeout(()=>{const p=quizWinner;document.getElementById('quizReveal').innerHTML='<div class="quizResult"><img src="'+encodeURI(p.image).replace(/'/g,'%27')+'" alt="'+safe(p.name)+'"><div><div class="quizLabel">TODAY’S PICK</div><h3>'+safe(p.name)+'</h3><div class="price">'+priceOf(p)+'</div><p class="lead">'+safe(quizReason(p))+'</p></div></div><div class="quizButtons"><button type="button" data-quiz-detail>제품 자세히 보기</button><button class="secondary" type="button" data-quiz-redraw>다른 와인 뽑기</button><button class="secondary" type="button" data-quiz-reset>다시 선택하기</button></div>';},2350);
+ body.innerHTML='<h3>나만의 와인 사다리</h3><p class="lead">선택한 조건에 맞는 '+n+'종 중 오늘의 한 병을 뽑습니다.</p><div class="quizLadder"><svg viewBox="0 0 410 355" role="img" aria-label="와인 추천 사다리">'+lines+bars+'<path id="quizPath" d="'+path+'" fill="none" stroke="#6b343c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg></div><div id="quizReveal" aria-live="polite"><p class="quizEmpty">사다리를 따라 오늘의 와인을 찾는 중입니다…</p></div>';
+ if(focus){
+  const heading=body.querySelector('h3');
+  heading.tabIndex=-1;
+  heading.focus();
+ }
+ const line=document.getElementById('quizPath');
+ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const reveal=()=>{
+  const p=quizWinner;
+  const placeholder=!p.image||p.image.includes('product-image-pending');
+  const photo=placeholder?'<div class="quizPhotoPending">제품 사진 준비 중</div>'
+   :'<img src="'+safe(encodeURI(p.image))+'" alt="'+safe(p.name)+'">';
+  document.getElementById('quizReveal').innerHTML='<div class="quizResult">'+photo
+   +'<div><h3>'+safe(p.name)+'</h3><div class="price">'+priceOf(p)+'</div>'
+   +'<p class="lead">'+safe(quizReason(p))+'</p></div></div>'
+   +'<div class="quizButtons"><button type="button" data-quiz-detail>제품 자세히 보기</button>'
+   +(matches.length>1?'<button class="secondary" type="button" data-quiz-redraw>다른 와인 뽑기</button>':'')
+   +'<button class="secondary" type="button" data-quiz-reset>다시 선택하기</button></div>';
+ };
+ if(reducedMotion){
+  line.style.strokeDashoffset='0';
+  reveal();
+ }else{
+  line.style.transition='stroke-dashoffset 2.2s ease-in-out';
+  requestAnimationFrame(()=>{line.style.strokeDashoffset='0'});
+  quizTimer=setTimeout(reveal,2350);
+ }
 }
-function quizReason(p){return quizAnswers[2]+'에 어울리는 '+(categories[p.category]||'와인')+' 와인으로 추천합니다. 취향에 따라 맛의 느낌은 다를 수 있어요.'}
-document.getElementById('quizBody').addEventListener('click',e=>{
- const choice=e.target.closest('[data-quiz-choice]');if(choice){quizAnswers[quizStep]=quizQuestions[quizStep].choices[Number(choice.dataset.quizChoice)];quizStep++;quizRender();return}
- if(e.target.closest('[data-quiz-back]')){quizStep=Math.max(0,quizStep-1);quizRender();return}
- if(e.target.closest('[data-quiz-reset]')){clearTimeout(quizTimer);quizStep=0;quizAnswers.length=0;quizRender();return}
- if(e.target.closest('[data-quiz-redraw]')){quizRender();return}
- if(e.target.closest('[data-quiz-detail]')&&quizWinner){const p=quizWinner;document.getElementById('search').value=p.name;document.getElementById('country').value='';state.category='all';document.querySelectorAll('#chips .chip').forEach(b=>b.classList.toggle('active',b.dataset.category==='all'));render();document.getElementById('collection').scrollIntoView({behavior:'smooth'});}
-});
-quizRender();
 
-document.getElementById('close').onclick=()=>document.getElementById('detail').close();init();
+quizBody.addEventListener('click',e=>{
+ const choice=e.target.closest('[data-quiz-choice]');
+ if(choice){
+  const q=quizQuestions[quizStep];
+  quizAnswers[q.key]=q.choices[Number(choice.dataset.quizChoice)][0];
+  quizStep++;
+  quizRender(true);
+  return;
+ }
+ const back=e.target.closest('[data-quiz-step]');
+ if(back){
+  quizStep=Number(back.dataset.quizStep);
+  quizRender(true);
+  return;
+ }
+ if(e.target.closest('[data-quiz-reset]')){
+  quizStep=0;
+  quizQuestions.forEach(({key})=>delete quizAnswers[key]);
+  quizRender(true);
+  return;
+ }
+ if(e.target.closest('[data-quiz-redraw]')){
+  quizRender(true,quizWinner);
+  return;
+ }
+ if(e.target.closest('[data-quiz-detail]')&&quizWinner)showProductDetail(quizWinner);
+});
+
+document.getElementById('close').onclick=()=>document.getElementById('detail').close();
+init().then(()=>{
+ if(state.products.length)quizRender();
+ else quizBody.innerHTML='<p class="quizEmpty">상품 정보를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요.</p>';
+});
 </script></body></html>
