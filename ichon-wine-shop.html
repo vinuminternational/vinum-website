@@ -85,8 +85,8 @@ function normalizeBottle(img){
   const cw=maxX-minX+1,ch=maxY-minY+1;
   const output=document.createElement('canvas');output.width=360;output.height=460;
   const o=output.getContext('2d');const size=img.dataset.packageSize||'bottle';
-  const targetHeight=size==='villa250'?660:size==='can250'?330:size==='can200'?275:410;
-  const targetWidth=size==='villa250'?600:size==='can250'?300:size==='can200'?280:340;
+  const targetHeight=size==='can250'||size==='villa250'?330:size==='can200'?275:410;
+  const targetWidth=size==='can250'||size==='villa250'?300:size==='can200'?280:340;
   const scale=Math.min(targetWidth/cw,targetHeight/ch);
   const dw=cw*scale,dh=ch*scale;
   // White canvas background matches the product card and removes source margins.
