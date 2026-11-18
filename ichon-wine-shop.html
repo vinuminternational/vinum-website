@@ -46,6 +46,10 @@ function priceOf(p){
  const name=String(p.name||'').toLowerCase().replace(/\s+/g,'');
  const brand=String(p.brand||'').toLowerCase().replace(/\s+/g,'');
  const identity=name+' '+brand;
+ if(/돔페리뇽|domp[eé]rignon/.test(identity))return '349,000원';
+ if(/크룩|krug/.test(identity))return '399,000원';
+ if(/에디찌오네|에디치오네|edizione/.test(identity))return '72,000원';
+ if(/모엣샹동|mo[eë]t.*chandon/.test(identity))return '72,000원';
  if(/브루넬로디몬탈치노|brunellodimontalcino/.test(identity))return '<span style="color:#777;font-size:12px">정상가 <s>99,000원</s></span><br><strong style="color:#b91c1c">블랙프라이데이 특가 69,300원</strong>';
  if(/프리미티보수수마니엘로|primitivosusumaniello|수수마니엘로|susumaniello|아파시멘토|아파씨멘토|appassimento/.test(identity))return '33,000원';
  if(/트렌텀|트렌담|trentham/.test(identity))return '28,000원';
@@ -57,6 +61,7 @@ function priceOf(p){
  return '가격 준비 중';
 }
 
+const additionalProducts=[{"name":"돔 페리뇽 빈티지","brand":"Dom Pérignon","category":"sparkling","region":"France · Champagne","grape":"샤르도네, 피노 누아","abv":"빈티지별 확인","image":"images/ichon/dom-perignon.svg","desc":"샴페인 하우스의 빈티지 프레스티지 퀴베. 섬세한 기포와 숙성에서 오는 복합적인 풍미가 특징이며, 정확한 빈티지별 테이스팅 노트는 병 라벨 확인 후 안내합니다."},{"name":"크룩 그랑 퀴베","brand":"Krug","category":"sparkling","region":"France · Champagne","grape":"피노 누아, 샤르도네, 뫼니에","abv":"에디션별 확인","image":"images/ichon/krug-grande-cuvee.svg","desc":"여러 해의 와인을 정교하게 블렌딩하는 크룩의 대표 샴페인. 고운 기포와 견과류, 브리오슈, 시트러스 계열의 복합적인 풍미가 특징입니다. 에디션 번호는 입고 병 기준으로 확인합니다."},{"name":"모엣 샹동 임페리얼 브뤼","brand":"Moët & Chandon","category":"sparkling","region":"France · Champagne","grape":"피노 누아, 뫼니에, 샤르도네","abv":"12% 내외 (라벨 확인)","image":"images/ichon/moet-imperial.svg","desc":"청사과와 시트러스, 흰 꽃, 브리오슈 향이 조화를 이루는 샴페인. 신선한 과실미와 섬세한 기포가 매력적인 클래식 브뤼 스타일입니다."},{"name":"판티니 에디찌오네 친퀘 아우토크토니","brand":"Fantini","category":"red","region":"Italy · Abruzzo · Puglia","grape":"몬테풀치아노, 산지오베제, 프리미티보, 네그로아마로, 말바시아 네라","abv":"에디션별 확인","image":"images/ichon/edizione.svg","desc":"이탈리아 토착 품종 다섯 가지를 블렌딩한 풀바디 레드. 체리와 블랙커런트, 향신료, 코코아의 깊은 향과 벨벳 같은 탄닌, 긴 여운이 특징입니다."},{"name":"섹슈얼 초콜릿","brand":"SLO Down Wines","category":"red","region":"USA · California","grape":"진판델, 시라 중심 (빈티지별 확인)","abv":"빈티지별 확인","image":"images/ichon/sexual-chocolate.svg","desc":"잘 익은 체리와 블랙베리의 농축된 과실향에 다크 초콜릿과 스파이스 뉘앙스가 어우러지는 풍성한 스타일의 레드 와인입니다."}];
 const state={products:[],category:'all'};
 const safe=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -122,7 +127,7 @@ function render(){
  normalizeVisibleBottles();
 }
 async function init(){
- try{const response=await fetch('index.html',{cache:'no-store'});if(!response.ok)throw Error('카탈로그 접근 실패');const source=await response.text();state.products=extractObjects(source).filter(p=>{const name=String(p.name||'');const image=String(p.image||'');const category=String(p.category||'');const text=[name,image,category].join(' ').toLowerCase();return !/안토니\s*루퍼트|안토니루퍼트|anthonij\s*rupert|anthoni[jy]?\s*rupert|케이프\s*오브\s*굿\s*호프|cape\s*of\s*good\s*hope|로마린스|l'ormarins|lormarins/i.test([name,String(p.brand||''),String(p.region||'')].join(' '))&&!/글루바인|글뤼바인|글뤼와인|gluhwein|glühwein|gluehwein|mulled\s*wine/i.test(text)&&!/챠오 로쏘|ciao rosso/i.test(name)&&!/팩\s*와인|와인\s*팩|팩와인|bag.in.box|bag in box|tetra\s*pak|brick\s*wine|1\s*l(?:iter|itre)?\b|1000\s*ml|프리미티보\s*메를로|산지오베제\s*팩/i.test(text)&&!/\bpack\b|\bbrick\b/i.test(text)});if(!state.products.length)throw Error('상품을 찾지 못했습니다.');
+ try{const response=await fetch('index.html',{cache:'no-store'});if(!response.ok)throw Error('카탈로그 접근 실패');const source=await response.text();state.products=extractObjects(source).filter(p=>{const name=String(p.name||'');const image=String(p.image||'');const category=String(p.category||'');const text=[name,image,category].join(' ').toLowerCase();return !/안토니\s*루퍼트|안토니루퍼트|anthonij\s*rupert|anthoni[jy]?\s*rupert|케이프\s*오브\s*굿\s*호프|cape\s*of\s*good\s*hope|로마린스|l'ormarins|lormarins/i.test([name,String(p.brand||''),String(p.region||'')].join(' '))&&!/글루바인|글뤼바인|글뤼와인|gluhwein|glühwein|gluehwein|mulled\s*wine/i.test(text)&&!/챠오 로쏘|ciao rosso/i.test(name)&&!/팩\s*와인|와인\s*팩|팩와인|bag.in.box|bag in box|tetra\s*pak|brick\s*wine|1\s*l(?:iter|itre)?\b|1000\s*ml|프리미티보\s*메를로|산지오베제\s*팩/i.test(text)&&!/\bpack\b|\bbrick\b/i.test(text)});state.products.push(...additionalProducts.filter(p=>!state.products.some(existing=>existing.name===p.name)));if(!state.products.length)throw Error('상품을 찾지 못했습니다.');
  const countries=[...new Set(state.products.map(countryOf))].sort();document.getElementById('country').innerHTML+='<option>'+countries.map(safe).join('</option><option>')+'</option>';
  const cats=['all',...new Set(state.products.map(p=>p.category||'other'))];document.getElementById('chips').innerHTML=cats.map(c=>'<button class="chip'+(c==='all'?' active':'')+'" data-category="'+safe(c)+'">'+(c==='all'?'전체':safe(categories[c]||c))+'</button>').join('');
  render();
