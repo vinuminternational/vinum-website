@@ -39,11 +39,7 @@ function volumeOf(p){
  const identity=[name,image].join(' ');
  const can=/챠오|차오|ciao|빌라\s*프란체스카|villa\s*francesca/.test(identity)&&!/팩|pack|1000\s*ml|\b1\s*l\b/.test(identity);
  if(can)return /빌라\s*프란체스카|villa\s*francesca|피노\s*그리지오|pinot\s*grigio/.test(identity)?'250ml':'200ml';
- const txt=[p.name,p.desc,p.image].join(' ').toLowerCase();
- const found=txt.match(/(200|250|375|500|750|1000)\s?ml/);
- if(found)return found[1]+'ml';
- if(/\b1l\b/.test(txt))return '1,000ml';
- return '750ml (확인 필요)';
+ return '750ml';
 }
 
 function priceOf(p){
