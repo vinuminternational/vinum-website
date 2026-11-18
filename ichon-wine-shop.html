@@ -46,7 +46,7 @@ function priceOf(p){
  const name=String(p.name||'').toLowerCase().replace(/\s+/g,'');
  const brand=String(p.brand||'').toLowerCase().replace(/\s+/g,'');
  const identity=name+' '+brand;
- if(/브루넬로디몬탈치노|brunellodimontalcino/.test(identity))return '69,300원';
+ if(/브루넬로디몬탈치노|brunellodimontalcino/.test(identity))return '<span style="color:#777;font-size:12px">정상가 <s>99,000원</s></span><br><strong style="color:#b91c1c">블랙프라이데이 특가 69,300원</strong>';
  if(/프리미티보수수마니엘로|primitivosusumaniello|수수마니엘로|susumaniello|아파시멘토|아파씨멘토|appassimento/.test(identity))return '33,000원';
  if(/트렌텀|트렌담|trentham/.test(identity))return '28,000원';
  if(/일피아토|ilpiatto|ilpiato/.test(identity))return '19,900원';
@@ -118,7 +118,7 @@ function render(){
  const q=document.getElementById('search').value.trim().toLowerCase(),country=document.getElementById('country').value;
  const filtered=state.products.filter(p=>(state.category==='all'||(p.category||'other')===state.category)&&(!country||countryOf(p)===country)&&(!q||[p.name,p.grape,p.region,p.brand].join(' ').toLowerCase().includes(q)));
  document.getElementById('count').textContent=filtered.length+'종';
- document.getElementById('grid').innerHTML=filtered.length?filtered.map(p=>{const i=state.products.indexOf(p);const n=[p.name,p.image||''].join(' ').toLowerCase();const isCan=/챠오|차오|ciao|villa francesca|빌라\s*프란체스카|빌라프란체스카/.test(n)&&!/팩|pack|1l|1000ml/.test(n);const canSize=isCan?(/빌라\s*프란체스카|빌라프란체스카|villa francesca/.test(n)?'villa250':/피노\s*그리지오|pinot grigio/.test(n)?'can250':'can200'):'bottle';return '<article class="item'+(/락번\s*피노\s*누아|rockburn\s*pinot\s*noir|올드\s*세일러|old\s*sailor/i.test(p.name)?' scaled-special':'')+'"><div class="photo"><img loading="lazy" data-package-size="'+canSize+'" src="'+encodeURI(p.image).replace(/'/g,'%27')+'" alt="'+safe(p.name)+'"></div><div class="info"><span class="tag">'+safe(categories[p.category]||'와인')+' · '+safe(countryOf(p))+'</span><h3>'+safe(p.name)+'</h3><div class="meta">품종 '+safe(p.grape||'확인 중')+'<br>용량 '+safe(volumeOf(p))+' · 도수 '+safe(p.abv||'확인 중')+'</div><p class="tasting">'+safe(tasteOf(p))+'</p><div class="price">'+safe(priceOf(p))+'</div><button class="action" data-id="'+i+'">제품 자세히 보기</button></div></article>'}).join(''):'<div class="empty">조건에 맞는 상품이 없습니다.</div>';
+ document.getElementById('grid').innerHTML=filtered.length?filtered.map(p=>{const i=state.products.indexOf(p);const n=[p.name,p.image||''].join(' ').toLowerCase();const isCan=/챠오|차오|ciao|villa francesca|빌라\s*프란체스카|빌라프란체스카/.test(n)&&!/팩|pack|1l|1000ml/.test(n);const canSize=isCan?(/빌라\s*프란체스카|빌라프란체스카|villa francesca/.test(n)?'villa250':/피노\s*그리지오|pinot grigio/.test(n)?'can250':'can200'):'bottle';return '<article class="item'+(/락번\s*피노\s*누아|rockburn\s*pinot\s*noir|올드\s*세일러|old\s*sailor/i.test(p.name)?' scaled-special':'')+'"><div class="photo"><img loading="lazy" data-package-size="'+canSize+'" src="'+encodeURI(p.image).replace(/'/g,'%27')+'" alt="'+safe(p.name)+'"></div><div class="info"><span class="tag">'+safe(categories[p.category]||'와인')+' · '+safe(countryOf(p))+'</span><h3>'+safe(p.name)+'</h3><div class="meta">품종 '+safe(p.grape||'확인 중')+'<br>용량 '+safe(volumeOf(p))+' · 도수 '+safe(p.abv||'확인 중')+'</div><p class="tasting">'+safe(tasteOf(p))+'</p><div class="price">'+priceOf(p)+'</div><button class="action" data-id="'+i+'">제품 자세히 보기</button></div></article>'}).join(''):'<div class="empty">조건에 맞는 상품이 없습니다.</div>';
  normalizeVisibleBottles();
 }
 async function init(){
