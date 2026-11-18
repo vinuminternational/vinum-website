@@ -11,6 +11,8 @@
 .info{position:relative;z-index:1;background:#fff;min-width:0;overflow-wrap:anywhere}
 @media(max-width:700px){.photo{height:225px;min-height:225px;max-height:225px;padding:16px 10px 12px}}
 @media(max-width:360px){.photo{height:280px;min-height:280px;max-height:280px}}
+/* Rockburn Pinot Noir and Old Sailor Coffee: reduce displayed bottle size only, without affecting copy. */
+.item.scaled-special .photo img{max-height:76%;max-width:76%;object-fit:contain}
 </style></head><body>
 <header><div class="wrap nav"><a class="brand" href="ichon-wine-shop.html">이촌동와인가게<small>ICHON WINE SHOP</small></a><nav class="navlinks"><a href="#collection">와인 컬렉션</a><a href="#guide">주문 안내</a></nav></div></header>
 <section class="hero"><div class="wrap heroInner"><div><div class="eyebrow">CURATED WINES FOR YOUR TABLE</div><h1>좋은 와인을,<br>더 가까운 일상에.</h1><p>이촌동의 작은 와인가게가 엄선한 와인들.<br>오늘의 식탁에 어울리는 한 병을 찾아보세요.</p></div><div class="heroPhoto" aria-hidden="true"></div></div></section>
@@ -39,7 +41,7 @@ function render(){
  const q=document.getElementById('search').value.trim().toLowerCase(),country=document.getElementById('country').value;
  const filtered=state.products.filter(p=>(state.category==='all'||(p.category||'other')===state.category)&&(!country||countryOf(p)===country)&&(!q||[p.name,p.grape,p.region,p.brand].join(' ').toLowerCase().includes(q)));
  document.getElementById('count').textContent=filtered.length+'종';
- document.getElementById('grid').innerHTML=filtered.length?filtered.map(p=>{const i=state.products.indexOf(p);return '<article class="item"><div class="photo"><img loading="lazy" src="'+encodeURI(p.image).replace(/'/g,'%27')+'" alt="'+safe(p.name)+'"></div><div class="info"><span class="tag">'+safe(categories[p.category]||'와인')+' · '+safe(countryOf(p))+'</span><h3>'+safe(p.name)+'</h3><div class="meta">품종 '+safe(p.grape||'확인 중')+'<br>용량 '+safe(volumeOf(p))+' · 도수 '+safe(p.abv||'확인 중')+'</div><p class="tasting">'+safe(tasteOf(p))+'</p><div class="price">가격 준비 중</div><button class="action" data-id="'+i+'">제품 자세히 보기</button></div></article>'}).join(''):'<div class="empty">조건에 맞는 상품이 없습니다.</div>';
+ document.getElementById('grid').innerHTML=filtered.length?filtered.map(p=>{const i=state.products.indexOf(p);return '<article class="item'+(/락번\s*피노\s*누아|rockburn\s*pinot\s*noir|올드\s*세일러|old\s*sailor/i.test(p.name)?' scaled-special':'')+'"><div class="photo"><img loading="lazy" src="'+encodeURI(p.image).replace(/'/g,'%27')+'" alt="'+safe(p.name)+'"></div><div class="info"><span class="tag">'+safe(categories[p.category]||'와인')+' · '+safe(countryOf(p))+'</span><h3>'+safe(p.name)+'</h3><div class="meta">품종 '+safe(p.grape||'확인 중')+'<br>용량 '+safe(volumeOf(p))+' · 도수 '+safe(p.abv||'확인 중')+'</div><p class="tasting">'+safe(tasteOf(p))+'</p><div class="price">가격 준비 중</div><button class="action" data-id="'+i+'">제품 자세히 보기</button></div></article>'}).join(''):'<div class="empty">조건에 맞는 상품이 없습니다.</div>';
 }
 async function init(){
  try{const response=await fetch('index.html',{cache:'no-store'});if(!response.ok)throw Error('카탈로그 접근 실패');const source=await response.text();state.products=extractObjects(source).filter(p=>!/챠오 로쏘|ciao rosso/i.test(p.name));if(!state.products.length)throw Error('상품을 찾지 못했습니다.');
