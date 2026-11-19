@@ -12,7 +12,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
-from PIL import Image, ImageOps
+from PIL import Image
 from rembg import remove
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,11 +57,20 @@ def candidate(item, dest):
     if min(original.size) < 180:
         raise ValueError("Image too small")
     cutout = remove(original)
-    bbox = cutout.getbbox()
+    # Ignore near-transparent segmentation noise before measuring the bottle.
+    alpha = cutout.getchannel("A")
+    mask = alpha.point(lambda value: 255 if value >= 32 else 0)
+    bbox = mask.getbbox()
     if not bbox:
         raise ValueError("Empty segmentation")
     cutout = cutout.crop(bbox)
-    cutout.thumbnail((780, 1100), Image.Resampling.LANCZOS)
+    # Normalize the visible bottle height, not merely its source-image size.
+    # 1056 px = 88% of the 1200 px transparent canvas.
+    target_height, max_width = 1056, 780
+    scale = min(target_height / cutout.height, max_width / cutout.width)
+    new_size = (max(1, round(cutout.width * scale)),
+                max(1, round(cutout.height * scale)))
+    cutout = cutout.resize(new_size, Image.Resampling.LANCZOS)
     canvas = Image.new("RGBA", (900, 1200), (255, 255, 255, 0))
     canvas.alpha_composite(cutout, ((900-cutout.width)//2, (1200-cutout.height)//2))
     canvas.save(dest, optimize=True)
