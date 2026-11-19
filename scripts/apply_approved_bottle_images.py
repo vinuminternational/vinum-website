@@ -5,7 +5,7 @@ p = Path("index.html")
 s = p.read_text(encoding="utf-8")
 replacements = {
     '"name":"안토니 루퍼트 옵티마"': ('"image":"images/optima-2022.webp"', '"image":"images/approved-optima.png"'),
-    '"name":"로마린스 블랑 드 블랑"': ('"image":"images/lormarins-blanc-de-blancs.webp"', '"image":"images/approved-lormarins.png"'),
+    '"name":"로마린스 블랑 드 블랑"': ('"image":"images/lormarins-blanc-de-blancs-2022.webp"', '"image":"images/approved-lormarins.png"'),
     '"name":"케이프 오브 굿 호프 슈냉 블랑"': ('"image":"images/cape-chenin-blanc-2026.webp"', '"image":"images/approved-cape-chenin.png"'),
 }
 for name, (old, new) in replacements.items():
