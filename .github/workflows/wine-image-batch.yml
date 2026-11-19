@@ -31,7 +31,7 @@ jobs:
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           BATCH_LIMIT: ${{ inputs.limit }}
-        run: python scripts/batch_wine_images.py --csv image-products.csv --limit "$BATCH_LIMIT"
+        run: python scripts/batch_wine_images.py --csv image-products-discovered.csv --limit "$BATCH_LIMIT"
       - name: Create a single batch review PR
         uses: peter-evans/create-pull-request@v7
         with:
