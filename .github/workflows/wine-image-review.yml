@@ -1,0 +1,43 @@
+name: Prepare wine image candidates
+on:
+  workflow_dispatch:
+    inputs:
+      product_name:
+        description: Wine product name to search
+        required: true
+        type: string
+      product_id:
+        description: Stable catalog product ID
+        required: true
+        type: string
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: scripts/requirements-image.txt
+      - run: pip install -r scripts/requirements-image.txt
+      - name: Find and prepare candidates
+        env:
+          GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
+          GOOGLE_CSE_CX: ${{ secrets.GOOGLE_CSE_CX }}
+        run: python scripts/prepare_wine_image.py --name "${{ inputs.product_name }}" --id "${{ inputs.product_id }}"
+      - name: Open review pull request (does not publish)
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: image-review/${{ github.run_id }}
+          delete-branch: true
+          title: "Review bottle image - ${{ inputs.product_name }}"
+          body: |
+            Candidate images only. Do not merge without confirming the exact wine label,
+            producer, image reuse permission, and cutout quality.
+            These files are NOT linked to the public catalog automatically.
+          add-paths: image-review/
+          commit-message: "Prepare image candidates for manual review"
