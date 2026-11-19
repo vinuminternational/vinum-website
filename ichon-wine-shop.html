@@ -1,31 +1,84 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>이촌동와인가게 | 우리 동네 와인 큐레이션</title><meta name="description" content="이촌동와인가게의 와인 컬렉션. 국가, 품종, 도수, 테이스팅 노트를 확인하고 매장 수령을 문의하세요.">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f8f6f0;--ink:#272922;--muted:#77796e;--accent:#6b343c;--line:#e5e0d5}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans','Noto Sans KR',sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{max-width:1220px;margin:auto;padding:0 24px}header{position:sticky;top:0;z-index:10;background:#f8f6f0f5;border-bottom:1px solid var(--line)}.nav{height:77px;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{font-size:21px;font-weight:700;letter-spacing:-.07em}.brand small{display:block;font-size:10px;color:var(--accent);letter-spacing:.2em;font-weight:500;margin-top:3px}.navlinks{display:flex;gap:24px;font-size:12px}.navlinks a:hover{color:var(--accent)}.hero{background:#28332e;color:white}.heroInner{display:grid;grid-template-columns:1fr 1fr;min-height:375px;align-items:center;gap:30px}.hero h1{font-size:clamp(36px,4.6vw,65px);font-weight:500;letter-spacing:-.065em;line-height:1.35;margin:15px 0}.hero p{color:#d4dbd5;font-size:14px;line-height:2}.eyebrow{font-size:11px;letter-spacing:.18em;color:#d6c1a4}.heroPhoto{height:100%;min-height:350px;background:linear-gradient(90deg,#28332e 0%,transparent 30%),url('images/editorial/winemaking-about-v2.jpg') center/cover}.section{padding:55px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:16px}.head h2{font-size:29px;letter-spacing:-.06em;margin:0 0 9px}.sub{font-size:13px;color:var(--muted);line-height:1.8}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0}.toolbar input,.toolbar select{background:white;border:1px solid var(--line);padding:12px 14px;min-height:45px;border-radius:5px}.toolbar input{flex:1;min-width:180px}.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 22px}.chip{border:1px solid #d9d4c9;border-radius:50px;background:transparent;padding:9px 14px;font-size:12px}.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.item{background:white;border:1px solid var(--line);border-radius:7px;overflow:hidden;display:flex;flex-direction:column}.photo{height:260px;background:#fff;display:grid;place-items:center;padding:14px}.photo img{width:100%;height:100%;object-fit:contain}.info{padding:17px;display:flex;flex-direction:column;flex:1}.tag{font-size:11px;color:var(--accent)}.info h3{font-size:16px;line-height:1.5;letter-spacing:-.04em;margin:9px 0}.tasting{font-size:12px;color:#666a63;line-height:1.75;flex:1}.meta{font-size:11px;line-height:1.9;color:#77796e}.price{font-weight:600;color:var(--accent);font-size:14px;margin:13px 0}.action{border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:4px;padding:12px;font-size:12px;width:100%}.action:disabled{opacity:.5;cursor:not-allowed}.notice{margin-top:30px;border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--muted);line-height:2}.footer{background:#232b26;color:#d4d8d2;padding:38px 0;font-size:12px;line-height:2}.footer strong{color:#fff;font-size:17px}.empty{padding:45px;text-align:center;color:var(--muted)}dialog{border:0;border-radius:8px;max-width:550px;width:calc(100% - 30px);padding:28px;box-shadow:0 20px 70px #0005}dialog::backdrop{background:#1119}dialog h2{margin:0 0 12px}dialog p{font-size:13px;line-height:1.8;color:var(--muted)}dialog label{display:block;font-size:12px;margin:14px 0 6px}dialog input{width:100%;padding:12px;border:1px solid var(--line)}.modalButtons{display:flex;gap:8px;margin-top:22px}.modalButtons button{flex:1;padding:12px;border:1px solid var(--accent);border-radius:4px}.modalButtons button:first-child{background:white;color:var(--accent)}.modalButtons button:last-child{background:var(--accent);color:white}@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.photo{height:205px}.info{padding:12px}.info h3{font-size:14px}.heroInner{grid-template-columns:1fr;min-height:0}.heroInner>div:first-child{padding:45px 0}.heroPhoto{display:none}.navlinks{gap:10px}.navlinks a{font-size:11px}.section{padding:35px 0}.wrap{padding:0 16px}}@media(max-width:360px){.grid{grid-template-columns:1fr}}
-/* Uniform product image stage: never overlap copy or distort bottle proportions. */
-.photo{height:290px;min-height:290px;max-height:290px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:20px 14px 16px;flex:0 0 auto}
-.photo img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center center;flex-shrink:1}
-.item{min-width:0}
-.info{position:relative;z-index:1;background:#fff;min-width:0;overflow-wrap:anywhere}
-@media(max-width:700px){.photo{height:225px;min-height:225px;max-height:225px;padding:16px 10px 12px}}
-@media(max-width:360px){.photo{height:280px;min-height:280px;max-height:280px}}
-.photo{padding:12px;isolation:isolate}.photo img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}.photo canvas.normalized-bottle{display:block;width:100%;height:100%;object-fit:contain;max-width:100%;max-height:100%}
-
-/* Wine ladder recommendation */
-.quiz{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,4vw,42px);margin-bottom:52px;box-shadow:0 12px 36px #28332e0a}.quizTop{display:flex;justify-content:space-between;gap:15px;align-items:center}.quizLabel{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}.quiz h2{font-size:clamp(24px,3vw,35px);letter-spacing:-.06em;margin:10px 0}.quiz .lead{color:var(--muted);font-size:13px;line-height:1.9}.quizProgress{display:flex;gap:7px;margin:24px 0}.quizProgress span{height:5px;background:#eee9df;flex:1;border-radius:20px}.quizProgress span.on{background:var(--accent)}.quizChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:20px 0}.quizChoices button{border:1px solid #dcd5c9;background:#fcfaf7;color:var(--ink);padding:17px 12px;border-radius:9px;min-height:60px;font-size:14px}.quizChoices button[aria-pressed="true"],.quizChoices button:hover,.quizChoices button:focus-visible{border-color:var(--accent);background:#f8eef0}.quizBack,.quizAgain{border:0;background:none;color:var(--accent);padding:10px 0;text-decoration:underline;font-size:13px}.quizLadder{max-width:440px;margin:12px auto}.quizLadder svg{width:100%;height:auto}.quizResult{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:center;background:#faf8f3;border:1px solid var(--line);border-radius:12px;padding:22px;margin:20px 0}.quizResult img{width:100%;height:180px;object-fit:contain}.quizResult h3{font-size:21px;margin:6px 0}.quizResult .price{font-size:20px}.quizButtons{display:flex;gap:10px;flex-wrap:wrap}.quizButtons button{border-radius:6px;padding:12px 17px;border:1px solid var(--accent);background:var(--accent);color:white}.quizButtons button.secondary{background:white;color:var(--accent)}.quizEmpty{color:var(--muted);line-height:1.8;font-size:13px}@media(max-width:600px){.quizChoices{gap:8px}.quizChoices button{padding:12px 8px;font-size:12px}.quizResult{grid-template-columns:90px 1fr;gap:13px;padding:12px}.quizResult img{height:140px}.quizResult h3{font-size:17px}}
-.quiz{scroll-margin-top:90px}.quizPhotoPending{font-size:12px;color:var(--muted);text-align:center}.quizResult>div{min-width:0;overflow-wrap:anywhere}
-</style></head><body>
-<header><div class="wrap nav"><a class="brand" href="ichon-wine-shop.html">이촌동와인가게<small>ICHON WINE SHOP</small></a><nav class="navlinks"><a href="#wine-quiz">30초 와인 사다리</a><a href="#collection">와인 컬렉션</a><a href="#guide">주문 안내</a></nav></div></header>
-<section class="hero"><div class="wrap heroInner"><div><div class="eyebrow">CURATED WINES FOR YOUR TABLE</div><h1>좋은 와인을,<br>더 가까운 일상에.</h1><p>이촌동의 작은 와인가게가 엄선한 와인들.<br>오늘의 식탁에 어울리는 한 병을 찾아보세요.</p></div><div class="heroPhoto" aria-hidden="true"></div></div></section>
-<main class="wrap section" id="collection"><section class="quiz" id="wine-quiz" aria-labelledby="quizHeading"><div class="quizTop"><div><div class="quizLabel">ICHON WINE LADDER · 30 SECOND QUIZ</div><h2 id="quizHeading">오늘 나에게 어울리는 와인은?</h2><div class="lead">상황, 가격대, 와인 종류를 고르면 사다리로 오늘의 와인 한 병을 추천해 드려요.</div></div><span aria-hidden="true" style="font-size:36px">🍷</span></div><div class="quizProgress" id="quizProgress" aria-hidden="true"></div><div id="quizBody" aria-live="polite"><p class="quizEmpty">상품 정보를 불러오는 중입니다.</p></div></section>
-<div class="head"><div><h2>Wine Collection</h2><div class="sub">이촌동와인가게가 엄선한 와인을 소개합니다. 상품별 가격은 추후 공개됩니다.</div></div><div class="sub" id="count"></div></div>
-<div class="toolbar"><input id="search" placeholder="와인명 · 품종 · 국가 검색" aria-label="와인 검색"><select id="country" aria-label="국가 선택"><option value="">전체 국가</option></select></div>
-<div class="chips" id="chips"></div><div class="grid" id="grid"><div class="empty">상품 정보를 불러오는 중입니다.</div></div>
-<div class="notice" id="guide">※ 상품 정보는 와인별 제품 자료를 기준으로 표시됩니다. 빈티지·용량·도수는 입고 제품에 따라 다를 수 있으므로 구매 전 확인해 주세요.<br>※ 현재는 가격 및 온라인 결제 기능을 제공하지 않습니다. 주류 구매는 성인에 한하며, 주문 및 수령 방식은 관계 법령에 맞춰 별도 안내할 예정입니다.</div></main>
-<footer class="footer"><div class="wrap"><strong>이촌동와인가게</strong><p>이촌동의 와인 큐레이션 스토어 · 취향에 맞는 와인을 만나보세요.</p><p>가격 및 주문 접수 기능 준비 중 · 미성년자에게 주류를 판매하지 않습니다.</p></div></footer>
-<dialog id="detail"><h2 id="detailTitle"></h2><p id="detailText"></p><div class="modalButtons"><button id="close">닫기</button><button id="inquire" disabled>주문 기능 준비 중</button></div></dialog>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ichon-wine-shop.css"></head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="shop-header">
+  <div class="wrap nav">
+    <a class="brand" href="ichon-wine-shop.html">이촌동와인가게<small lang="en">ICHON WINE SHOP</small></a>
+    <nav class="navlinks" aria-label="가게 메뉴">
+      <a href="#wine-quiz">30초 와인 사다리</a>
+      <a href="#collection">와인 컬렉션</a>
+      <a href="#visit">매장 안내</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="shop-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">이촌종합상가의 작은 와인숍</p>
+        <h1 id="shop-title">오늘 저녁,<br>어떤 와인을<br>열어볼까요?</h1>
+        <p>저녁 식탁에 곁들일 한 병부터 선물할 와인까지, 함께 골라드려요.</p>
+        <a class="hero-action" href="#visit">매장 안내</a>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/ichon/shopfront-concept.webp" alt="짙은 초록색 와인숍 외관과 따뜻한 조명의 와인 선반" width="1200" height="800" fetchpriority="high">
+        <figcaption>연출 이미지</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="shop-shelf" aria-labelledby="shelf-title">
+    <div class="wrap shelf-inner">
+      <h2 id="shelf-title">와인과 치즈</h2>
+      <div class="offerings">
+        <div><h3>식탁에 곁들일 와인</h3><p>오늘 먹을 음식에 어울리는 한 병</p></div>
+        <div><h3>선물할 와인</h3><p>상대의 취향과 예산에 맞춰 고르는 한 병</p></div>
+        <div><h3>치즈 플래터</h3><p>치즈와 샤퀴테리, 견과류를 담은 구성</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="shop-visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap visit-inner">
+      <h2 id="visit-title">매장 안내</h2>
+      <address>서울 용산구 이촌로77길 19<br>이촌종합상가 1층 5호</address>
+      <div class="visit-links">
+        <a href="https://www.daangn.com/kr/local-profile/이촌동와인가게-2wjpo83vr2o9/" target="_blank" rel="noopener noreferrer">당근에서 가게 소식 보기</a>
+        <a href="#guide">주문 안내</a>
+      </div>
+    </div>
+  </section>
+  <div class="wrap section">
+    <section class="quiz" id="wine-quiz" aria-labelledby="quizHeading">
+      <p class="quizLabel">30초 와인 사다리</p>
+      <h2 id="quizHeading">오늘 나에게 어울리는 와인은?</h2>
+      <p class="lead">상황, 가격대, 와인 종류를 고르면 사다리로 오늘의 와인 한 병을 추천해 드려요.</p>
+      <div class="quizProgress" id="quizProgress" aria-hidden="true"></div>
+      <div id="quizBody" aria-live="polite"><p class="quizEmpty">상품 정보를 불러오는 중입니다.</p></div>
+    </section>
+    <section id="collection" aria-labelledby="collection-title">
+      <div class="head">
+        <div><h2 id="collection-title">와인 컬렉션</h2><p class="sub">이촌동와인가게가 엄선한 와인을 소개합니다.</p></div>
+        <div class="sub" id="count" aria-live="polite"></div>
+      </div>
+      <div class="toolbar">
+        <input id="search" placeholder="와인명 · 품종 · 국가 검색" aria-label="와인 검색">
+        <select id="country" aria-label="국가 선택"><option value="">전체 국가</option></select>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="grid" id="grid"><div class="empty">상품 정보를 불러오는 중입니다.</div></div>
+      <div class="notice" id="guide">
+        <h3>주문 안내</h3>
+        <p>상품 정보는 와인별 제품 자료를 기준으로 표시됩니다. 빈티지·용량·도수는 입고 제품에 따라 다를 수 있으므로 구매 전 확인해 주세요.</p>
+        <p>일부 상품의 가격은 준비 중이며, 온라인 결제 기능은 제공하지 않습니다. 주류 구매는 성인에 한하며, 주문 및 수령 방식은 관계 법령에 맞춰 별도 안내할 예정입니다.</p>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="footer"><div class="wrap"><strong>이촌동와인가게</strong><p>이촌동의 와인 큐레이션 스토어 · 취향에 맞는 와인을 만나보세요.</p><p>주문 접수 기능 준비 중 · 미성년자에게 주류를 판매하지 않습니다.</p></div></footer>
+<dialog id="detail" aria-labelledby="detailTitle" aria-describedby="detailText"><h2 id="detailTitle"></h2><p id="detailText"></p><div class="modalButtons"><button id="close">닫기</button><button id="inquire" disabled>주문 기능 준비 중</button></div></dialog>
 <script>
 const categories={red:'레드',white:'화이트',sparkling:'스파클링',rose:'로제',can:'캔와인',liqueur:'리큐르',other:'기타'};
 const countryMap=[['남아프리카','남아프리카공화국'],['South Africa','남아프리카공화국'],['Italy','이탈리아'],['이탈리아','이탈리아'],['Australia','호주'],['호주','호주'],['New Zealand','뉴질랜드'],['뉴질랜드','뉴질랜드'],['Chile','칠레'],['칠레','칠레'],['France','프랑스'],['프랑스','프랑스']];
@@ -261,13 +314,13 @@ function quizRender(focus=false,previous=null){
  const n=quizCandidates.length;
  const x=i=>n===1?205:55+i*(300/(n-1));
  let bars='';const rungs=[];
- for(let i=0;i<Math.max(5,n*3);i++){if(n<2)break;const a=Math.floor(Math.random()*(n-1)),y=50+i*22;rungs.push([a,y]);bars+='<line x1="'+x(a)+'" y1="'+y+'" x2="'+x(a+1)+'" y2="'+y+'" stroke="#a77c5a" stroke-width="5" stroke-linecap="round"/>'}
+ for(let i=0;i<Math.max(5,n*3);i++){if(n<2)break;const a=Math.floor(Math.random()*(n-1)),y=50+i*22;rungs.push([a,y]);bars+='<line x1="'+x(a)+'" y1="'+y+'" x2="'+x(a+1)+'" y2="'+y+'" stroke="var(--ladder-rung)" stroke-width="5" stroke-linecap="round"/>'}
  let lane=Math.floor(Math.random()*n),path='M '+x(lane)+' 24';
  for(const [a,y] of rungs){path+=' L '+x(lane)+' '+y;if(lane===a){lane++;path+=' L '+x(lane)+' '+y}else if(lane===a+1){lane--;path+=' L '+x(lane)+' '+y}}
  path+=' L '+x(lane)+' 340';
  quizWinner=quizCandidates[lane];
  const lines=Array.from({length:n},(_,i)=>'<line x1="'+x(i)+'" y1="24" x2="'+x(i)+'" y2="340" stroke="#c8c0b5" stroke-width="3"/><text x="'+x(i)+'" y="18" text-anchor="middle" font-size="18">🍷</text>').join('');
- body.innerHTML='<h3>나만의 와인 사다리</h3><p class="lead">선택한 조건에 맞는 '+n+'종 중 오늘의 한 병을 뽑습니다.</p><div class="quizLadder"><svg viewBox="0 0 410 355" role="img" aria-label="와인 추천 사다리">'+lines+bars+'<path id="quizPath" d="'+path+'" fill="none" stroke="#6b343c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg></div><div id="quizReveal" aria-live="polite"><p class="quizEmpty">사다리를 따라 오늘의 와인을 찾는 중입니다…</p></div>';
+ body.innerHTML='<h3>나만의 와인 사다리</h3><p class="lead">선택한 조건에 맞는 '+n+'종 중 오늘의 한 병을 뽑습니다.</p><div class="quizLadder"><svg viewBox="0 0 410 355" role="img" aria-label="와인 추천 사다리">'+lines+bars+'<path id="quizPath" d="'+path+'" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg></div><div id="quizReveal" aria-live="polite"><p class="quizEmpty">사다리를 따라 오늘의 와인을 찾는 중입니다…</p></div>';
  if(focus){
   const heading=body.querySelector('h3');
   heading.tabIndex=-1;
