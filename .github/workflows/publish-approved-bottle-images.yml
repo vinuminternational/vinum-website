@@ -1,0 +1,37 @@
+name: Publish three approved bottle images (review PR)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy exactly the approved image candidates
+        run: |
+          set -euo pipefail
+          git fetch origin image-review/batch-44506285047 image-review/44508123728
+          mkdir -p images
+          git show origin/image-review/batch-44506285047:image-review/catalog-001/candidate-1.png > images/approved-optima.png
+          git show origin/image-review/44508123728:image-review/catalog-002-romarins-retry/candidate-1.png > images/approved-lormarins.png
+          git show origin/image-review/batch-44506285047:image-review/catalog-003/candidate-2.png > images/approved-cape-chenin.png
+          python scripts/apply_approved_bottle_images.py
+      - name: Open publication review PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: image-publish/approved-3-${{ github.run_id }}
+          delete-branch: true
+          title: "Publish three owner-approved wine bottle images"
+          body: |
+            Changes exactly three bottle images in the website catalog.
+            Product copy, prices, and all other catalog images are unchanged.
+            Owner confirmed promotional image usage rights.
+            Review the rendered website before merging.
+          add-paths: |
+            index.html
+            images/approved-optima.png
+            images/approved-lormarins.png
+            images/approved-cape-chenin.png
+          commit-message: "Prepare three approved bottle image replacements"
