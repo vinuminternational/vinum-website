@@ -1,0 +1,38 @@
+product_id,product_name,status
+catalog-001,"안토니 루퍼트 옵티마",active
+catalog-002,"로마린스 블랑 드 블랑",active
+catalog-003,"케이프 오브 굿 호프 슈냉 블랑",active
+catalog-004,"케이프 오브 굿 호프 샤도네이",active
+catalog-005,"SL 프리미티보 수수마니엘로 IGT",active
+catalog-006,"엔조 빈센조 아파시멘토 풀리아 로쏘",active
+catalog-007,"스테파노 브루넬로 디 몬탈치노",active
+catalog-008,"트렌텀 에스테이트 쉬라즈",active
+catalog-009,"일피아토 카르네",active
+catalog-010,"일피아토 피자",active
+catalog-011,"일피아토 토노 피노 그리지오 DOC",active
+catalog-012,"일피아토 파스타 피노 블러쉬 DOC",active
+catalog-013,"사비오 델 테루뇨 샤도네이",active
+catalog-014,"사비오 델 테루뇨 소비뇽 블랑",active
+catalog-015,"안나 스피나토 소비뇽 DOC",active
+catalog-016,"안나 스피나토 피노 그리지오 DOC",active
+catalog-017,"뱅크시아 세미용 소비뇽 블랑",active
+catalog-018,"SL 피뇰레토 DOC 스푸만테 엑스트라 드라이",active
+catalog-019,"람브루스코 로쏘 IGT",active
+catalog-020,"SL 말바지아 에밀리아 스푸만테 돌체",active
+catalog-021,"락번 스톨른 키스 로제",active
+catalog-022,"락번 피노 누아",active
+catalog-023,"루이지 레오나르도 글루바인",active
+catalog-024,"올드 세일러 커피 리큐르",active
+catalog-025,"챠오 빌라 프란체스카 메를로",active
+catalog-026,"챠오 피노 그리지오",active
+catalog-027,"챠오 모스카토",active
+catalog-028,"챠오 샹그리아",active
+catalog-029,"챠오 모히또",active
+catalog-030,"챠오 벨리니",active
+catalog-031,"챠오 세코 비앙코",active
+catalog-032,"챠오 로제",active
+catalog-033,"챠오 레몬피치 논알콜",active
+catalog-034,"챠오 프리미티보 메를로 팩 1L",active
+catalog-035,"챠오 산지오베제 오가닉 팩 1L",active
+catalog-036,"챠오 피노 그리지오 팩 1L",active
+catalog-037,"챠오 샤도네이 팩 1L",active
