@@ -1,0 +1,11 @@
+{
+  "source_review_pr": 8,
+  "source_branch": "image-review/batch-44506285047",
+  "selections": [
+    {"product_id": "catalog-001", "name": "안토니 루퍼트 옵티마", "candidate": "candidate-1.png", "decision": "approved", "target_image": "images/optima-2022.webp"},
+    {"product_id": "catalog-002", "name": "로마린스 블랑 드 블랑", "candidate": null, "decision": "rejected_all", "reason": "No candidate matches the actual product; do not publish"},
+    {"product_id": "catalog-003", "name": "케이프 오브 굿 호프 슈냉 블랑", "candidate": "candidate-2.png", "decision": "approved", "target_image": "images/cape-chenin-blanc-2026.webp"}
+  ],
+  "publication_status": "pending_source_rights_and_image_update",
+  "note": "Approval is product identity/appearance only, not a commercial reuse license. Do not overwrite existing website images until publication is verified."
+}
