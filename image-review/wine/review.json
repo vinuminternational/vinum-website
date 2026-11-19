@@ -1,0 +1,42 @@
+{
+  "product_id": "클라우디베이 쇼블",
+  "name": "클라우디베이 쇼블",
+  "candidates": [
+    {
+      "file": "image-review/wine/candidate-1.png",
+      "source_url": "https://www.gangnam.wine/shopimages/vinit777/0010020005102.jpg",
+      "source_page": "https://www.gangnam.wine/shop/shopdetail.html?branduid=3668380",
+      "title": "클라우디 베이 쇼비뇽블랑 Cloudy Bay, Sauvignon Blanc] - 강남와인",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/wine/candidate-2.png",
+      "source_url": "https://liquor-datacenter-prod.s3.ap-northeast-2.amazonaws.com/WINE_IMAGE/26317.png",
+      "source_page": "https://www.bottlebunker.co.kr/product?item_cd=1000428685",
+      "title": "클라우디 베이 소비뇽블랑 - 뉴질랜드 - 보틀벙커",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/wine/candidate-3.png",
+      "source_url": "https://kihyatr7690.cdn-nhncommerce.com/data/goods/23/07/28/1000000816/1000000816_detail_019.png",
+      "source_page": "https://m.kihya.com/goods/goods_view.php?goodsNo=1000000157",
+      "title": "클라우디 베이 쇼비뇽 블랑 전국 가격·재고 | 키햐 화이트",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/wine/candidate-4.png",
+      "source_url": "https://letsdowine.co.kr/web/upload/NNEditor/20221205/4ed0430892456f80e7c5ed64808d6e21.jpg",
+      "source_page": "https://letsdowine.co.kr/product/cloudy-bay-sauvignon-blanc-2025%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%94%94-%EB%B2%A0%EC%9D%B4-%EC%87%BC%EB%B9%84%EB%87%BD-%EB%B8%94%EB%9E%91/260/",
+      "title": "레츠두와인 | Cloudy Bay Sauvignon Blanc 2022",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/wine/candidate-5.png",
+      "source_url": "https://godomall.speedycdn.net/0aecb35d97566a7153dd46c4ee5a1641/goods/1000019519/image/main/pm-Leafields-Marlborough-Sauvignon-Blanc-750ml-2-s.png",
+      "source_page": "https://m.kihya.com/goods/goods_view.php?goodsNo=1000000157",
+      "title": "클라우디 베이 쇼비뇽 블랑 전국 가격·재고 | 키햐 화이트",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "notice": "Confirm label, producer, reuse rights and product identity before approval."
+}
