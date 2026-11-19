@@ -21,7 +21,8 @@ def load_products(path):
         name = (row.get("product_name") or "").strip()
         pid = (row.get("product_id") or "").strip()
         status = (row.get("status") or "active").strip().lower()
-        if status in {"discontinued", "sold_out", "inactive", "단종", "품절"}:
+        # Explicit opt-in only: hold, unknown, sold-out and discontinued never run.
+        if status != "active":
             continue
         if not name or not re.fullmatch(r"[a-z0-9][a-z0-9-]{1,63}", pid):
             raise ValueError(f"Invalid name or product_id: {row}")
