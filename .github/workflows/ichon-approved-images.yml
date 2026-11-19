@@ -1,0 +1,34 @@
+name: Prepare approved Ichon shop bottle images
+on:
+  push:
+    branches:
+      - ichon-approved-bottle-cutouts-20261119
+    paths:
+      - 'scripts/prepare_ichon_approved.py'
+      - '.github/workflows/ichon-approved-images.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cutouts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ichon-approved-bottle-cutouts-20261119
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: scripts/requirements-image.txt
+      - run: pip install -r scripts/requirements-image.txt
+      - name: Search originals and make transparent PNGs
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python scripts/prepare_ichon_approved.py
+      - name: Commit candidates to review branch (not public)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ichon-wine-shop.html ichon-image-review.json images/ichon/
+          git diff --cached --quiet || (git commit -m "Prepare two approved Ichon bottle cutouts for visual QA" && git push)
