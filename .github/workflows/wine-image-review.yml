@@ -26,9 +26,7 @@ jobs:
       - run: pip install -r scripts/requirements-image.txt
       - name: Find and prepare candidates
         env:
-          GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
-          GOOGLE_CSE_CX: ${{ secrets.GOOGLE_CSE_CX }}
-        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           PRODUCT_NAME: ${{ inputs.product_name }}
           PRODUCT_ID: ${{ inputs.product_id }}
         run: python scripts/prepare_wine_image.py --name "$PRODUCT_NAME" --id "$PRODUCT_ID"
