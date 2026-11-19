@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Search candidate bottle images, remove backgrounds, and prepare review artifacts.
-Requires GOOGLE_CSE_API_KEY and GOOGLE_CSE_CX for online search.
+Requires SERPAPI_KEY for online image search.
 Never modifies existing product images or the public product catalog.
 """
 import argparse
@@ -26,14 +26,19 @@ def slugify(value):
     return result[:65] or "wine"
 
 def search(name, limit=5):
-    key, cx = os.getenv("GOOGLE_CSE_API_KEY"), os.getenv("GOOGLE_CSE_CX")
-    if not key or not cx:
-        raise RuntimeError("Set GOOGLE_CSE_API_KEY and GOOGLE_CSE_CX in GitHub Actions secrets")
-    response = SESSION.get("https://www.googleapis.com/customsearch/v1",
-        params={"key": key, "cx": cx, "q": name + " wine bottle", "searchType": "image",
-                "num": limit, "safe": "active", "imgType": "photo"}, timeout=25)
+    key = os.getenv("SERPAPI_KEY")
+    if not key:
+        raise RuntimeError("Set SERPAPI_KEY in GitHub Actions secrets")
+    response = SESSION.get("https://serpapi.com/search.json",
+        params={"api_key": key, "engine": "google_images", "q": name + " wine bottle",
+                "safe": "active", "num": limit}, timeout=30)
     response.raise_for_status()
-    return response.json().get("items", [])
+    payload = response.json()
+    if payload.get("error"):
+        raise RuntimeError("SerpApi: " + str(payload["error"]))
+    return [{"link": entry.get("original"), "title": entry.get("title"),
+             "image": {"contextLink": entry.get("link")}}
+            for entry in payload.get("images_results", [])[:limit] if entry.get("original")]
 
 def candidate(item, dest):
     url = item.get("link", "")
