@@ -4,11 +4,10 @@
 
 ## 사전 설정
 
-1. Google Programmable Search Engine에서 이미지 검색이 가능한 검색 엔진을 생성하고 검색 엔진 ID(CX)를 확인합니다.
-2. Google Cloud에서 Custom Search JSON API 사용 가능 여부 및 과금 정책을 확인하고 API 키를 발급합니다. 서비스 신규 이용 가능 여부는 Google 공식 안내를 확인해야 합니다.
-3. GitHub 저장소 → Settings → Secrets and variables → Actions → New repository secret에서 아래 두 값을 설정합니다.
-   - `GOOGLE_CSE_API_KEY`: API 키
-   - `GOOGLE_CSE_CX`: 검색 엔진 ID
+1. SerpApi 계정을 생성하고 대시보드에서 API 키를 확인합니다.
+2. 요금제 및 월별 검색 한도를 확인합니다.
+3. GitHub 저장소 → Settings → Secrets and variables → Actions → New repository secret에서 다음 값을 설정합니다.
+   - `SERPAPI_KEY`: SerpApi API 키
 4. API 키는 이슈·PR·소스코드·채팅에 붙여넣지 않습니다.
 
 ## 실행 절차
