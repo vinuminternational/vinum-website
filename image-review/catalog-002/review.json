@@ -1,0 +1,42 @@
+{
+  "product_id": "catalog-002",
+  "name": "로마린스 블랑 드 블랑",
+  "candidates": [
+    {
+      "file": "image-review/catalog-002/candidate-1.png",
+      "source_url": "http://www.gangnam.wine/shopimages/vinit777/mobile/4/10919854_represent",
+      "source_page": "https://www.gangnam.wine/shop/shopdetail.html?branduid=10919854",
+      "title": "루이나 블랑 드 블랑 RUINART BLANC DE BLANCS] - 강남와인",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-002/candidate-2.png",
+      "source_url": "https://mblogthumb-phinf.pstatic.net/MjAyMzA5MTJfMTE2/MDAxNjk0NTE1NTUwMTUx.Ek8l6q_QZdFv3qmAzGFwZx5Z65vGHirEa7isw-mpF7kg.KKpU5GkvLL1VFOY5Xlj0upeC6R0IfuHaGkWBGGoXz-cg.JPEG.winecollector/%EB%A3%A8%EC%9D%B4%EB%82%98%EB%B8%94%EB%9E%91%EB%93%9C%EB%B8%94%EB%9E%91_Ruinart_bdb.jpg?type=w800",
+      "source_page": "https://blog.naver.com/winecollector/223210403209?viewType=pc",
+      "title": "루이나 블랑 드 블랑 Ruinart Blanc de Blancs : 네이버 블로그",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-002/candidate-3.png",
+      "source_url": "http://winell.co.kr/public/upload/file/goods/product_201709250001_b_thumbnail_Champagne-de-Venoge-Princes-Blanc-de-Blancs.png",
+      "source_page": "http://winell.co.kr/product/view/201709250001/8",
+      "title": "WINELL",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-002/candidate-4.png",
+      "source_url": "https://d1e2y5wc27crnp.cloudfront.net/media/core/product/thumbnail/ba231845-a74b-444d-b072-b7045fbf468d.webp",
+      "source_page": "https://dailyshot.co/m/item/10609",
+      "title": "루이나 블랑 드 블랑 전국 가격비교하고 구매 | 데일리샷에서 모든 와인 가격 비교하고 내 주변에서 구매하기 2026",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-002/candidate-5.png",
+      "source_url": "https://mblogthumb-phinf.pstatic.net/MjAyNTEwMTBfMTgw/MDAxNzYwMDc5MTY0OTk1.7mjmNNXeVFagSsPzsW3PhM4Tr2sW0svpkMr6WOmMQ2Ig.I9Z7g2CmSPbEjxn18kU1P1fNQnVrMn6jBgEbskoEhlAg.JPEG/20240513_190113.jpg?type=w800",
+      "source_page": "https://blog.naver.com/jhj8637/224030497213?viewType=pc",
+      "title": "루이나 블랑드블랑 샴페인 : 네이버 블로그",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "notice": "Confirm label, producer, reuse rights and product identity before approval."
+}

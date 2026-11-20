@@ -1,0 +1,39 @@
+{
+  "product_id": "catalog-001",
+  "name": "안토니 루퍼트 옵티마",
+  "candidates": [
+    {
+      "file": "image-review/catalog-001/candidate-1.png",
+      "source_url": "http://hic.wine/cdn/shop/products/Optima.jpg?v=1582818418&width=1024",
+      "source_page": "https://hic.wine/products/anthonij-rupert-optima?srsltid=AYCX9vJ8wbydxm3J-78ykPXPDjMVX6PaoJwn4vF5hlyghTnUFnIVLJd5",
+      "title": "Buy Anthonij Rupert OPTIMA Online at Hic!",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-001/candidate-2.png",
+      "source_url": "https://www.shop.rupertwines.com/images/thumbs/0000978_anthonij-rupert-optima-in-tin_625.png",
+      "source_page": "https://www.shop.rupertwines.com/anthonij-rupert-optima-in-tin-2",
+      "title": "Anthonij Rupert Wyne Estate | ANTHONIJ RUPERT - Optima in Tin",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-001/candidate-3.png",
+      "source_url": "https://www.mrdwine.com/cdn/shop/files/2020_Anthonij_Rupert_Optima.png?v=1765949660&width=900",
+      "source_page": "https://www.mrdwine.com/products/anthonij-rupert-optima-franschhoek-valley-south-africa-2020?srsltid=AYCX9vIgetmWVTHTTrpn4bjesafLXPKERV8tydc_TLB2ae0uWKwhW3kJ",
+      "title": "2020 | Anthonij Rupert Optima | Franschhoek Valley",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "source_url": "https://www.shop.rupertwines.com/images/thumbs/0001088_anthonij-rupert-optima-2022-magnum-15lt_625.png",
+      "error": "404 Client Error: Not Found for url: https://www.shop.rupertwines.com/images/thumbs/0001088_anthonij-rupert-optima-2022-magnum-15lt_625.png"
+    },
+    {
+      "file": "image-review/catalog-001/candidate-5.png",
+      "source_url": "https://assets.wine.com/winecom/image/upload/ar_16:9,c_pad,b_white,w_1200,f_auto,q_auto:good,fl_progressive/154988fbs.jpg",
+      "source_page": "https://www.wine.com/product/anthonij-rupert-optima-2011/154988",
+      "title": "Anthonij Rupert Optima 2011 | Wine.com",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "notice": "Confirm label, producer, reuse rights and product identity before approval."
+}

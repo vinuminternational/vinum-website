@@ -1,0 +1,42 @@
+{
+  "product_id": "catalog-003",
+  "name": "케이프 오브 굿 호프 슈냉 블랑",
+  "candidates": [
+    {
+      "file": "image-review/catalog-003/candidate-1.png",
+      "source_url": "https://www.npwines.com/cdn/shop/files/2025-LCBORetailReleases_1_331946e0-8c14-447c-a2e7-16375a69bf3a_1024x1024.png?v=1741199734",
+      "source_page": "https://www.npwines.com/products/the-winery-of-good-hope-bush-vine-chenin-blanc-2023",
+      "title": "The Winery of Good Hope Bush Vine Chenin Blanc – Nicholas Pearce Wines Inc",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-003/candidate-2.png",
+      "source_url": "https://thewinetastingshop.co.uk/wp-content/uploads/2023/08/Cape-of-Good-Hope-Chenin-Blanc-Riebeeksrivier.jpg",
+      "source_page": "https://thewinetastingshop.co.uk/product/cape-of-good-hope-riebeeksrivier-chenin-blanc/",
+      "title": "Cape of Good Hope Riebeeksrivier Chenin Blanc - The Wine Tasting Shop",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-003/candidate-3.png",
+      "source_url": "https://www.saq.com/media/catalog/product/1/5/15289628-1_1714511588.png?optimize=high&fit=bounds&height=&width=&format=jpeg",
+      "source_page": "https://www.saq.com/en/15289628?srsltid=AYCX9vIA240y2Be9r24wRNwpIICmGRNdlXa29_fmrFsFOLGPpmulscnW",
+      "title": "The Winery of Good Hope Bush Vine Chenin Blanc 2025 | Product page | SAQ.COM",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-003/candidate-4.png",
+      "source_url": "https://product-cdn.systembolaget.se/productimages/45851931/45851931_400.webp",
+      "source_page": "https://www.systembolaget.se/produkt/vin/cape-of-good-hope-9030801/",
+      "title": "Cape of Good Hope Swartland Chenin Blanc, 2025 | Systembolaget",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-003/candidate-5.png",
+      "source_url": "https://thewinetastingshop.co.uk/wp-content/uploads/2023/08/Cape-of-Good-Hope-Chenin-Blanc-Riebeeksrivier-label.jpg",
+      "source_page": "https://thewinetastingshop.co.uk/product/cape-of-good-hope-riebeeksrivier-chenin-blanc/",
+      "title": "Cape of Good Hope Riebeeksrivier Chenin Blanc - The Wine Tasting Shop",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "notice": "Confirm label, producer, reuse rights and product identity before approval."
+}
