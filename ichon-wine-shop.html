@@ -143,7 +143,29 @@ function volumeOf(p){
  return '750ml';
 }
 
+const offerName=name=>name.normalize('NFC').trim().replace(/\s+/g,' ').toLowerCase();
+const offerPrices=new Map();
+for(const card of document.querySelectorAll('#today-offers .offer-card')){
+ const name=card.querySelector('h3')?.textContent;
+ const regular=card.querySelector('.offer-original s')?.textContent;
+ const sale=card.querySelector('.offer-price strong')?.textContent;
+ const won=/^([\d,]+)\s*원$/;
+ const regularAmount=regular?.trim().match(won)?.[1];
+ const saleAmount=sale?.trim().match(won)?.[1];
+ if(name&&regularAmount&&saleAmount){
+  offerPrices.set(offerName(name),{
+   regular: Number(regularAmount.replace(/,/g,'')),
+   sale: Number(saleAmount.replace(/,/g,''))
+  });
+ }
+}
+
 function priceOf(p){
+ const offer=offerPrices.get(offerName(p.name));
+ if(offer){
+  return '<p class="offer-original">정상가 <s>'+offer.regular.toLocaleString('ko-KR')+'원</s></p>'
+   +'<p class="offer-price">행사가 <strong>'+offer.sale.toLocaleString('ko-KR')+'원</strong></p>';
+ }
  if(Number.isFinite(p.retailPrice))return p.retailPrice.toLocaleString('ko-KR')+'원';
  const name=String(p.name||'').toLowerCase().replace(/\s+/g,'');
  const brand=String(p.brand||'').toLowerCase().replace(/\s+/g,'');
@@ -277,6 +299,8 @@ let quizWinner=null;
 let quizTimer=null;
 
 function quizPrice(p){
+ const offer=offerPrices.get(offerName(p.name));
+ if(offer)return offer.sale;
  if(Number.isFinite(p.retailPrice))return p.retailPrice;
  const prices=[...priceOf(p).matchAll(/([\d,]+)원/g)];
  return prices.length?Number(prices.at(-1)[1].replace(/,/g,'')):null;
