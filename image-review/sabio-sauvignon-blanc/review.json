@@ -1,0 +1,33 @@
+{
+  "product_id": "sabio-sauvignon-blanc",
+  "name": "Sabio del Terruno Sauvignon Blanc",
+  "candidates": [
+    {
+      "file": "image-review/sabio-sauvignon-blanc/candidate-1.png",
+      "source_url": "https://cms-admin.yesmydrink.com/storage/width/2000/21404b05-edfd-4604-815b-4e68eb70f856.webp",
+      "source_page": "https://yesmydrink.com/products/sabio-del-terruno-sauvignon-blanc-en?variantId=532",
+      "title": "Sabio Del Terruno Sauvignon Blanc",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/sabio-sauvignon-blanc/candidate-2.png",
+      "source_url": "https://cms-admin.yesmydrink.com/storage/width/2000/d0be56e7-5c5d-45cc-b438-53c215dcba60.webp",
+      "source_page": "https://yesmydrink.com/products/sabio-del-terruno-sauvignon-blanc-en?variantId=532",
+      "title": "Sabio Del Terruno Sauvignon Blanc",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "source_url": "https://cantinesgarzi.com/wp-content/uploads/2025/06/Sauvignon-Blanc-D.O.-Valle-Central-300x500.jpg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x77798c878630>"
+    },
+    {
+      "source_url": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1012814214695190",
+      "error": "cannot identify image file <_io.BytesIO object at 0x77798c760b30>"
+    },
+    {
+      "source_url": "https://cantinesgarzi.com/wp-content/uploads/2025/06/Chardonnay-D.O.-Valle-Central-300x500.jpg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x77798c760630>"
+    }
+  ],
+  "notice": "Confirm label, producer, reuse rights and product identity before approval."
+}
