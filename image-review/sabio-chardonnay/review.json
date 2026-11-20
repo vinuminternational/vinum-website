@@ -1,0 +1,42 @@
+{
+  "product_id": "sabio-chardonnay",
+  "name": "Sabio del Terruno Chardonnay",
+  "candidates": [
+    {
+      "file": "image-review/sabio-chardonnay/candidate-1.png",
+      "source_url": "https://images.vivino.com/labels/GKKkx7sISpKLwBa2t5Tfiw.jpg",
+      "source_page": "https://www.vivino.com/en/cantine-sgarzi-luigi-sabio-del-terruno-chardonnay/w/13401686?srsltid=AYCX9vIf4tZdxVNR3aQ8_HnjlyQhUzS3AYEem3eZwFBPDU4u-ttJRDr_",
+      "title": "Cantine Sgarzi Luigi Sabio del Terruño Chardonnay | Vivino English",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/sabio-chardonnay/candidate-2.png",
+      "source_url": "https://cantinesgarzi.com/wp-content/uploads/2025/06/Chardonnay-D.O.-Valle-Central-300x500.jpg",
+      "source_page": "https://cantinesgarzi.com/product-tag/sabio-del-terruno-wine/",
+      "title": "sabio del terruño wine – Cantine Sgarzi",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/sabio-chardonnay/candidate-3.png",
+      "source_url": "https://cms-admin.yesmydrink.com/storage/width/2000/21404b05-edfd-4604-815b-4e68eb70f856.webp",
+      "source_page": "https://yesmydrink.com/products/sabio-del-terruno-sauvignon-blanc-en?variantId=532",
+      "title": "Sabio Del Terruno Sauvignon Blanc",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/sabio-chardonnay/candidate-4.png",
+      "source_url": "https://cms-admin.yesmydrink.com/storage/width/2000/0141ca55-241a-477c-a834-92385ff096e4.webp",
+      "source_page": "https://yesmydrink.com/wines/sabio-del-terruno-sauvignon-blanc-en",
+      "title": "Sabio Del Terruno Sauvignon Blanc",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/sabio-chardonnay/candidate-5.png",
+      "source_url": "https://winestyleonline.com/images_gen/214/214298/0_0_orig.webp",
+      "source_page": "https://winestyleonline.com/products/Castillo-de-Aresan-Terruno-Chardonnay.html",
+      "title": "Wine Castillo de Aresan Terruno Chardonnay, 750 ml Castillo de Aresan Terruno  Chardonnay – price, reviews",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "notice": "Confirm label, producer, reuse rights and product identity before approval."
+}
