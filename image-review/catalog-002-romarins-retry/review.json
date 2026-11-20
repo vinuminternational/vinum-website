@@ -1,0 +1,39 @@
+{
+  "product_id": "catalog-002-romarins-retry",
+  "name": "Anthonij Rupert L'Ormarins Blanc de Blancs",
+  "candidates": [
+    {
+      "file": "image-review/catalog-002-romarins-retry/candidate-1.png",
+      "source_url": "https://lormarinswines.com/wp-content/uploads/sites/3/2026/09/LOrmarins_Blanc-de-Blancs_2021_NV.png",
+      "source_page": "https://lormarinswines.com/brand/blanc-de-blancs/",
+      "title": "BLANC DE BLANCS | L'Ormarins",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "source_url": "https://lormarinswines.com/wp-content/uploads/sites/3/2023/12/LOrmarins-Blanc-de-blanc-2018.png",
+      "error": "Image too small"
+    },
+    {
+      "file": "image-review/catalog-002-romarins-retry/candidate-3.png",
+      "source_url": "https://cdn.ct-static.com/labels/01d95341-063f-4abf-b3d6-f37d524e5b93.jpg",
+      "source_page": "https://www.cellartracker.com/wine.asp?iWine=4819452",
+      "title": "2018 L'Ormarins Blanc de Blancs - CellarTracker",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-002-romarins-retry/candidate-4.png",
+      "source_url": "https://crushmag-online.com/wp-content/uploads/2016/10/Lormarins-Blanc-de-Blancs.jpeg",
+      "source_page": "https://crushmag-online.com/anthonij-rupert-wyne-releases-the-lormarins-blanc-de-blancs-2012/",
+      "title": "Anthonij Rupert Wyne releases L'Ormarins Blanc de Blancs 2012 | Crush",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "image-review/catalog-002-romarins-retry/candidate-5.png",
+      "source_url": "https://www.vinexx.com/wp-content/uploads/2018/10/24899787_172_anthonij_rupert_lormarinsbdb_vinexx.jpg",
+      "source_page": "https://www.vinexx.com/anthonij-rupert-2013-lormarins-blanc-de-blancs-mcc/",
+      "title": "Anthonij Rupert 2013 L'Ormarins Blanc de Blancs MCC · VINEXX",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "notice": "Confirm label, producer, reuse rights and product identity before approval."
+}
