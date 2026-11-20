@@ -6,6 +6,7 @@
   --accent: #293c2d;
   --line: #d6d2c2;
   --highlight: #e7eadc;
+  --offer-accent: #70283b;
   --ladder-rung: #78836b;
   --heading: 'Noto Serif KR', 'Batang', serif;
   --gutter: clamp(20px, 4.6vw, 68px);
@@ -72,6 +73,7 @@ a { color: inherit; text-decoration: none; }
   min-height: 44px;
   font-size: .875rem;
 }
+.navlinks .nav-offers { color: var(--offer-accent); font-weight: 700; }
 .navlinks a:hover, .shop-visit a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -98,15 +100,19 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-copy p { max-width: 23rem; color: var(--muted); }
 .hero-copy .eyebrow { font-size: .875rem; letter-spacing: .06em; }
-.hero-action {
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
+.hero-action, .hero-visit {
   display: inline-flex;
   align-items: center;
   min-height: 46px;
-  padding: 8px 22px;
-  background: var(--accent);
-  color: var(--paper);
   font-size: .875rem;
 }
+.hero-action {
+  padding: 8px 22px;
+  background: var(--offer-accent);
+  color: var(--paper);
+}
+.hero-visit { text-decoration: underline; text-underline-offset: 4px; }
 .hero-action:hover { text-decoration: underline; text-underline-offset: 4px; }
 .hero-action:focus-visible { outline-color: var(--ink); }
 .hero-photo { position: relative; min-height: 440px; background: var(--accent); }
@@ -125,6 +131,59 @@ a { color: inherit; text-decoration: none; }
   color: white;
   background: #20291de8;
   font-size: .75rem;
+}
+
+.today-offers {
+  padding-block: clamp(30px, 5vw, 64px);
+  background: var(--offer-accent);
+  color: var(--paper);
+}
+.today-offers h2 { font-size: clamp(1.8rem, 3.7vw, 3.25rem); }
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.5vw, 22px);
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+.offer-card img {
+  display: block;
+  width: 100%;
+  height: clamp(150px, 17vw, 224px);
+  padding: 12px;
+  background: #fff;
+  object-fit: contain;
+}
+.offer-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(10px, 2vw, 20px);
+}
+.offer-info h3 {
+  margin-bottom: auto;
+  padding-bottom: 10px;
+  line-height: 1.4;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+.offer-original, .offer-price { font-size: .875rem; }
+.offer-original { color: var(--muted); }
+.offer-price { color: var(--offer-accent); font-weight: 700; }
+.offer-price strong {
+  display: inline-block;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 .shop-shelf { border-top: 1px solid var(--line); }
@@ -161,7 +220,7 @@ a { color: inherit; text-decoration: none; }
 .visit-inner a:hover { color: var(--highlight); }
 
 .section { padding-block: clamp(36px, 6vw, 76px); }
-#main, #visit, #wine-quiz, #collection, #guide { scroll-margin-top: 88px; }
+#main, #today-offers, #visit, #wine-quiz, #collection, #guide { scroll-margin-top: 88px; }
 .head { display: flex; justify-content: space-between; align-items: end; gap: 16px; }
 .head h2 { margin-bottom: 7px; }
 .sub { font-size: .875rem; color: var(--muted); }
@@ -320,6 +379,7 @@ dialog p { font-size: .9375rem; color: var(--muted); overflow-wrap: anywhere; }
 }
 @media (max-width: 760px) {
   .hero-photo { min-height: 360px; }
+  .offer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .photo { height: 225px; }
   .info { padding: 12px; }
@@ -334,7 +394,7 @@ dialog p { font-size: .9375rem; color: var(--muted); overflow-wrap: anywhere; }
   .quizResult img { height: 140px; }
 }
 @media (max-width: 540px) {
-  #main, #visit, #wine-quiz, #collection, #guide { scroll-margin-top: 122px; }
+  #main, #today-offers, #visit, #wine-quiz, #collection, #guide { scroll-margin-top: 122px; }
 }
 @media (max-width: 420px) {
   .navlinks { gap: 0 12px; }
@@ -344,6 +404,8 @@ dialog p { font-size: .9375rem; color: var(--muted); overflow-wrap: anywhere; }
   .visit-links { grid-column: auto; }
 }
 @media (max-width: 360px) {
+  .navlinks { column-gap: 6px; }
+  #main, #today-offers, #visit, #wine-quiz, #collection, #guide { scroll-margin-top: 172px; }
   .grid { grid-template-columns: 1fr; }
   .photo { height: 265px; }
 }
