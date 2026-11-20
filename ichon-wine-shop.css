@@ -157,7 +157,8 @@ a { color: inherit; text-decoration: none; }
 .offer-card img {
   display: block;
   width: 100%;
-  height: clamp(150px, 17vw, 224px);
+  height: clamp(224px, 24vw, 344px);
+  flex: none;
   padding: 12px;
   background: #fff;
   object-fit: contain;
